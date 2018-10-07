@@ -1,0 +1,7 @@
+{
+  "name": "simplepos",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
