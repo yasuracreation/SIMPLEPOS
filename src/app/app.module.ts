@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AdminPage } from '../pages/admin/admin';
 import { ProductAddPage } from '../pages/product-add/product-add';
+import { LoginPage } from '../pages/login/login';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ProductAddPage } from '../pages/product-add/product-add';
     HomePage,
     ListPage,
     AdminPage,
-    ProductAddPage
+    ProductAddPage,
+    LoginPage
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { ProductAddPage } from '../pages/product-add/product-add';
     HomePage,
     ListPage,
     AdminPage,
-    ProductAddPage
+    ProductAddPage,
+    LoginPage
   ],
   providers: [
     StatusBar,

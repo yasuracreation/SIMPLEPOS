@@ -1,0 +1,55 @@
+<!--
+  Generated template for the LoginPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Simple POS</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding col-12 col-md-6 col-lg-6 col-xl-3>
+  <section class="home-container" style="text-align: center">
+
+    <div class="row header">
+
+      <div class="col text-center">
+        [Simple POS]
+      </div>
+    </div>
+    <div class="row icon-row" style="text-align: center">
+      POINT OF SALE SYSTEM
+    </div>
+  </section>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-list>
+
+          <ion-item>
+            <ion-label stacked>Username</ion-label>
+            <ion-input [(ngModel)]="auth.UserName"  type="text"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-label stacked>Password</ion-label>
+            <ion-input [(ngModel)]="auth.Password" type="password"></ion-input>
+          </ion-item>
+
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+        <button (click)="logintoSystem()" ion-button full>Login</button>
+        <button ion-button clear>Forget Password</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
