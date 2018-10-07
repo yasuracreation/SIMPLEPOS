@@ -11,7 +11,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { AdminPage } from '../pages/admin/admin';
 import { ProductAddPage } from '../pages/product-add/product-add';
 import { LoginPage } from '../pages/login/login';
-
+import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
   declarations: [
     MyApp,
@@ -25,6 +25,7 @@ import { LoginPage } from '../pages/login/login';
     BrowserModule,
     HttpModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [

@@ -3,6 +3,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 import { HomePage } from '../home/home';
+import { Storage } from '@ionic/storage';
 
 /**
  * Generated class for the LoginPage page.
@@ -18,7 +19,7 @@ import { HomePage } from '../home/home';
 })
 export class LoginPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController,private storage:Storage) {
   }
   auth ={UserName:'',Password:'',OrgID:''}
   logintoSystem(){
@@ -40,7 +41,7 @@ export class LoginPage {
         if (result.IsSuccess) {
           this.presentConfirm(result.Message);
           this.navCtrl.setRoot(HomePage);
-          
+          this.storage.set("token",result.token);
         } else {
           this.presentConfirm(result.Message)
           
