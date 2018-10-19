@@ -4,18 +4,161 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>Home</ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- <ion-grid>
-   <ion-row>
-     <ion-col col-12 col-md-6 col-lg-6 col-xl-3>
-        Bill
-     </ion-col>
-     <ion-col>
-        
-     </ion-col>
-   </ion-row>
- </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-grid>
+          <ion-row>
+            <ion-segment *ngFor="let item of itemcategories.categories" [(ngModel)]="icons" color="secondary">
+              <ion-segment-button value="{{item.ProductCategoryid}}" (click)="selectCategory(item.ProductCategoryid)">
+                <ion-icon name="{{item.icon}}"></ion-icon>
+                {{item.Name}}
+              </ion-segment-button>
+            </ion-segment>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4>
+              <ion-item-group>
+                <ion-item-divider color="light">Items</ion-item-divider>
+                <ion-item *ngFor="let item of products" (click)="selectProduct(item)">{{item.Name}}</ion-item>
+                <!-- <ion-item>8R</ion-item>
+                <ion-item>12R</ion-item>
+                <ion-item>12x18</ion-item> -->
+              </ion-item-group>
+            </ion-col>
+            <ion-col>
+              <ion-grid>
+                <ion-row>
+                  <h2>Item Detail</h2>
+                </ion-row>
+
+                <ion-row>
+
+                  <ion-col col-2>
+                    Name
+                  </ion-col>
+                  <ion-col col-4>
+                    {{selectedProduct.name}}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-2>
+                    Qty
+                  </ion-col>
+                  <ion-col col-4>
+                    <input type="text" [(ngModel)]="selectedProduct.qty" />
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col col-2>
+                    Price
+                  </ion-col>
+                  <ion-col col-4>
+                    <input type="text" [(ngModel)]="selectedProduct.price" />
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <button ion-button full (click)="additem()">Add</button>
+            </ion-col>
+            <ion-col>
+             
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+      <ion-col>
+        <ion-grid>
+          <ion-row>
+            <h1>Bill</h1>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              <ion-list>
+                <ion-item>
+                  <ion-row>
+                    <ion-col col-4>Name</ion-col>
+                    <ion-col>Qty</ion-col>
+                    <ion-col>Price</ion-col>
+                  </ion-row>
+                </ion-item>
+                <ion-item *ngFor="let item of addeditems">
+                  <ion-row>
+                    <ion-col col-4>{{item.name}}</ion-col>
+                    <ion-col>{{item.qty}}</ion-col>
+                    <ion-col>{{item.price}} RS</ion-col>
+                  </ion-row>
+
+                </ion-item>
+
+              </ion-list>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col></ion-col>
+            <ion-col >
+                <button  ion-button full (click)="removeitems()">Clear</button>
+               
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Net Qty
+            </ion-col>
+            <ion-col>
+              {{netQty}}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Net Total
+            </ion-col>
+            <ion-col>
+              {{totaln  }}
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+              Discount
+            </ion-col>
+            <ion-col>
+              15%
+            </ion-col>
+          </ion-row>
+          <hr>
+          <ion-row>
+            <ion-col>
+              <h2> Grand Total</h2>
+            </ion-col>
+            <ion-col>
+              <h2>{{grandAmount + total }}  Rs</h2>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col>
+                <button  ion-button full (click)="discount()">Discount</button>                
+            </ion-col>
+            <ion-col>
+              <button  ion-button full (click)="SaveOrder()">Save</button>
+            </ion-col>
+            <ion-col>
+                <button  ion-button full (click)="Save()">Cancel</button>
+              </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+
 </ion-content>
