@@ -10,6 +10,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { AdminPage } from '../pages/admin/admin';
 import { ProductAddPage } from '../pages/product-add/product-add';
+import { ProductCategoryAddPage } from '../pages/product-category-add/product-category-add'
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 @NgModule({
@@ -19,7 +20,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ListPage,
     AdminPage,
     ProductAddPage,
-    LoginPage
+    LoginPage,
+    ProductCategoryAddPage
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,8 @@ import { IonicStorageModule } from '@ionic/storage';
     ListPage,
     AdminPage,
     ProductAddPage,
-    LoginPage
+    LoginPage,
+    ProductCategoryAddPage
   ],
   providers: [
     StatusBar,

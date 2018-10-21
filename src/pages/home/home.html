@@ -13,8 +13,8 @@
     <ion-row>
       <ion-col>
         <ion-grid>
-          <ion-row>
-            <ion-segment *ngFor="let item of itemcategories.categories" [(ngModel)]="icons" color="secondary">
+          <ion-row style="overflow-x: auto; width:50vw">
+            <ion-segment *ngFor="let item of productCategory" [(ngModel)]="icons" color="secondary">
               <ion-segment-button value="{{item.ProductCategoryid}}" (click)="selectCategory(item.ProductCategoryid)">
                 <ion-icon name="{{item.icon}}"></ion-icon>
                 {{item.Name}}
@@ -25,14 +25,14 @@
             <ion-col col-4>
               <ion-item-group>
                 <ion-item-divider color="light">Items</ion-item-divider>
-                <ion-item *ngFor="let item of products" (click)="selectProduct(item)">{{item.Name}}</ion-item>
+                <ion-item *ngFor="let item of products" (click)="additem(item)">{{item.Name}}</ion-item>
                 <!-- <ion-item>8R</ion-item>
                 <ion-item>12R</ion-item>
                 <ion-item>12x18</ion-item> -->
               </ion-item-group>
             </ion-col>
-            <ion-col>
-              <ion-grid>
+            <!-- <ion-col>
+               <ion-grid>
                 <ion-row>
                   <h2>Item Detail</h2>
                 </ion-row>
@@ -62,17 +62,17 @@
                     <input type="text" [(ngModel)]="selectedProduct.price" />
                   </ion-col>
                 </ion-row>
-              </ion-grid>
-            </ion-col>
+              </ion-grid> 
+            </ion-col> -->
           </ion-row>
-          <ion-row>
+          <!-- <ion-row>
             <ion-col>
               <button ion-button full (click)="additem()">Add</button>
             </ion-col>
             <ion-col>
              
             </ion-col>
-          </ion-row>
+          </ion-row> -->
         </ion-grid>
       </ion-col>
       <ion-col>
@@ -92,9 +92,9 @@
                 </ion-item>
                 <ion-item *ngFor="let item of addeditems">
                   <ion-row>
-                    <ion-col col-4>{{item.name}}</ion-col>
-                    <ion-col>{{item.qty}}</ion-col>
-                    <ion-col>{{item.price}} RS</ion-col>
+                    <ion-col col-4>{{item.Name}}</ion-col>
+                    <ion-col><ion-icon name="arrow-back"></ion-icon> <span>{{item.qty}} </span> <ion-icon name="arrow-forward"></ion-icon></ion-col>
+                    <ion-col>{{item.Price}} RS</ion-col>
                   </ion-row>
 
                 </ion-item>

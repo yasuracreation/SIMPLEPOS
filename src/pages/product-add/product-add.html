@@ -59,12 +59,10 @@
       <ion-col col-4  >
           <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>
           <ion-list style="height:30vh; overflow:auto">
-            <ion-item *ngFor="let item of products" (click)="selectItem(item)">
+            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">
               {{ item.Name }}
             </ion-item>
-            <ion-item>
-              Item One
-            </ion-item>
+           
           </ion-list>
       </ion-col>
     </ion-row>

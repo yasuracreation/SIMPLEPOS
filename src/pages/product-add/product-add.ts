@@ -37,11 +37,11 @@ export class ProductAddPage {
 
     // if the value is an empty string don't filter the items
     if (val && val.trim() != '') {
-      this.products = this.products.filter((item) => {
+      this.productfilter = this.products.filter((item) => {
         return (item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1);
       })
     } else {
-
+      this.productfilter = this.products;
     }
   }
   selectItem(item) {
@@ -109,6 +109,7 @@ export class ProductAddPage {
     this.http.get('http://localhost:4000/api/product').subscribe(result => {
       console.log(result);
       this.products = JSON.parse(result['_body']);
+      this.productfilter = this.products;
     })
   }
   newProdut() {

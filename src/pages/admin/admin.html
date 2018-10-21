@@ -24,15 +24,15 @@
           <ion-list-header>
             Master Data
           </ion-list-header>
-          <ion-item (click)="presentModal()"> Product</ion-item>
+          <ion-item (click)="presentModal('product')"> Product</ion-item>
           <ion-item>Services</ion-item>
           <ion-item>Ingradiant</ion-item>
-          <ion-item>Category</ion-item>
+          <ion-item (click)="presentModal('category')">Category</ion-item>
           <ion-item>Type</ion-item>
           <ion-list-header>
             Cancellation
           </ion-list-header>
-          <ion-item (click)="presentModal()"> Order </ion-item>
+          <ion-item > Order </ion-item>
           <ion-item>Reservation </ion-item>
           <ion-item>Payment </ion-item>
 

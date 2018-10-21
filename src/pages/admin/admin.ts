@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ModalController } from 'ionic-angular';
 import { ProductAddPage } from '../product-add/product-add';
+import { ProductCategoryAddPage } from '../product-category-add/product-category-add';
 
 /**
  * Generated class for the AdminPage page.
@@ -22,9 +23,15 @@ export class AdminPage {
   ionViewDidLoad() {
     console.log('ionViewDidLoad AdminPage');
   }
-  presentModal() {
-    const modal = this.modalCtrl.create(ProductAddPage);
-    modal.present();
+  presentModal(type) {
+    if(type == "product"){
+      const modal = this.modalCtrl.create(ProductAddPage);
+      modal.present();
+    }else if(type =="category"){
+      const modal = this.modalCtrl.create(ProductCategoryAddPage);
+      modal.present();
+    }
+    
   }
   
 

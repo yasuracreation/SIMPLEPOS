@@ -107,7 +107,8 @@ export class HomePage {
   grandAmount = 0;
   discountAmount = 0;
   products;
-
+  productCategory;
+  productSubCategory;
   constructor(public navCtrl: NavController,private http: Http) {
     this.loaditems();
     this.selectCategory(1)
@@ -118,9 +119,21 @@ export class HomePage {
       console.log(result);
       this.products = JSON.parse(result['_body']);
       console.log(this.products);
+    });
+    this.http.get('http://localhost:4000/api/category').subscribe(result => {
+      console.log(result);
+      this.productCategory = JSON.parse(result['_body']);
+      console.log(this.productCategory);
     })
   
   }
+  // loadallproduct() {
+  //   this.http.get('http://localhost:4000/api/category').subscribe(result => {
+  //     console.log(result);
+  //     this.productCategory = JSON.parse(result['_body']);
+      
+  //   })
+  // }
   selectProduct(item){
     console.log(item);
       this.selectedProduct.productid = item._id;
@@ -135,11 +148,12 @@ export class HomePage {
             return item.Category == categoryid;
       })
   }
-  additem(){
-    this.addeditems.push(this.selectedProduct);
-    var balance = parseFloat(this.selectedProduct.price) * parseFloat(this.selectedProduct.qty);
+  additem(item){
+    item.qty = 1;
+    this.addeditems.push(item);
+    var balance = parseFloat(item.Price);
     this.AddTotal(balance);
-    this.netQty += parseFloat(this.selectedProduct.qty);
+    this.netQty;
     this.selectedProduct = {'price':'',"qty":'',"name":'',"productid":''};
   }
   removeitems(){
