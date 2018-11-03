@@ -25674,6 +25674,27 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-home ion-segment {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+page-home ion-segment::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+page-home ion-segment ion-segment-button.segment-button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100px;
+  -ms-flex: 1 0 100px;
+  flex: 1 0 100px;
+}
+
 page-login .home-container {
   display: -webkit-flex;
   -webkit-flex-direction: column;

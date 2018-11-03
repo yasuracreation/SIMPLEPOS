@@ -13,6 +13,7 @@ import { ProductAddPage } from '../pages/product-add/product-add';
 import { ProductCategoryAddPage } from '../pages/product-category-add/product-category-add'
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
+import { OrderPanelPage } from '../pages/order-panel/order-panel';
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +22,8 @@ import { IonicStorageModule } from '@ionic/storage';
     AdminPage,
     ProductAddPage,
     LoginPage,
-    ProductCategoryAddPage
+    ProductCategoryAddPage,
+    OrderPanelPage
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { IonicStorageModule } from '@ionic/storage';
     AdminPage,
     ProductAddPage,
     LoginPage,
-    ProductCategoryAddPage
+    ProductCategoryAddPage,
+    OrderPanelPage
   ],
   providers: [
     StatusBar,
