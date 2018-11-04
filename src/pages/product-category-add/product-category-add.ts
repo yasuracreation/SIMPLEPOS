@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TransactionProvideProvider } from '../../providers/transaction-provide/transaction-provide';
 /**
  * Generated class for the ProductCategoryAddPage page.
  *
@@ -17,7 +18,7 @@ import 'rxjs/add/operator/map';
 export class ProductCategoryAddPage {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController,public transactionProvider:TransactionProvideProvider) {
   }
   searchQuery: string = '';
 
@@ -47,59 +48,82 @@ export class ProductCategoryAddPage {
   selectItem(item) {
     console.log(item);    
     this.productDTO.Name = item.Name;
+    this.productDTO.Id = item._id
  
   }
   createCategory() {
-    var headers = new Headers();
-    headers.append("Accept", 'application/json');
-    headers.append('Content-Type', 'application/json');
-    const requestOptions = new RequestOptions({ headers: headers });
-    let postData = {
-      "Name": this.productDTO.Name  
+    // var headers = new Headers();
+    // headers.append("Accept", 'application/json');
+    // headers.append('Content-Type', 'application/json');
+    // const requestOptions = new RequestOptions({ headers: headers });
+    // let postData = {
+    //   "Name": this.productDTO.Name  
 
-    }
+    // }
     if (this.productDTO.Id != "") {
-      this.http.put("http://localhost:4000/api/category/" + this.productDTO.Id, postData, requestOptions)
-        .subscribe(data => {
-          if (data['_body']) {
-            let result = JSON.parse(data['_body']);
-            console.log(result)
-            if (result.IsSucess) {
+      this.transactionProvider.UpdateProductCategory(this.productDTO,this.productDTO.Id,(result)=>{
+        // console.log(result);
+                if (result.IsSucess) {
               this.presentConfirm(result.Message);
             } else {
-              this.presentConfirm("Product Creation Fail")
+              this.presentConfirm(result.Message.message)
             }
-          }
-          console.log(data['_body']);
-        }, error => {
-          console.log(error);
-        });
+      })
+      // this.http.put("http://localhost:4000/api/productCategory/" + this.productDTO.Id, postData, requestOptions)
+      //   .subscribe(data => {
+      //     if (data['_body']) {
+      //       let result = JSON.parse(data['_body']);
+      //       console.log(result)
+      //       if (result.IsSucess) {
+      //         this.presentConfirm(result.Message);
+      //       } else {
+      //         this.presentConfirm("Product Creation Fail")
+      //       }
+      //     }
+      //     console.log(data['_body']);
+      //   }, error => {
+      //     console.log(error);
+      //   });
     } else {
-      this.http.post("http://localhost:4000/api/category", postData, requestOptions)
-        .subscribe(data => {
-          if (data['_body']) {
-            let result = JSON.parse(data['_body']);
-            console.log(result)
-            if (result.IsSucess) {
+      this.transactionProvider.CreateProductCategory(this.productDTO,(result)=>{
+        console.log(result)
+                if (result.IsSucess) {
               this.presentConfirm(result.Message);
             } else {
-              this.presentConfirm("Product Creation Fail")
+              this.presentConfirm(result.Message.message)
             }
-          }
-          console.log(data['_body']);
-        }, error => {
-          console.log(error);
-        });
+      })
+      // this.http.post("http://localhost:4000/api/productCategory", postData, requestOptions)
+      //   .subscribe(data => {
+      //     if (data['_body']) {
+      //       let result = JSON.parse(data['_body']);
+      //       console.log(result)
+      //       if (result.IsSucess) {
+      //         this.presentConfirm(result.Message);
+      //       } else {
+      //         this.presentConfirm(result.Message.message)
+      //       }
+      //     }
+      //     console.log(data['_body']);
+      //   }, error => {
+      //     console.log(error);
+      //   });
     }
     this.loadallproduct();
 
   }
   loadallproduct() {
-    this.http.get('http://localhost:4000/api/category').subscribe(result => {
-      console.log(result);
-      this.Category = JSON.parse(result['_body']);
+    
+    this.transactionProvider.GetProductCategory((result)=>{
+      console.log(result)
+      this.Category = result.data;
       this.productfilter = this.Category;
     })
+    // this.http.get('http://localhost:4000/api/category').subscribe(result => {
+    //   console.log(result);
+    //   this.Category = JSON.parse(result['_body']);
+    //   this.productfilter = this.Category;
+    // })
   }
   newCategory() {
     this.productDTO = { Name: '', Id: '' };

@@ -30,9 +30,14 @@ export class OrderPanelPage {
   loadResources(){
     this.transactionProvide.LoadResources((result)=>{
       console.log(result);
+      this.Resources.ProductCategory = result.productCategory.data;
+      this.Resources.ProductSubCategory = result.productSubcategory.data;
+      this.Resources.ProductItems = result.productItems.data;
     });
 
-    this.transactionProvide.loadProductItems()
+    // this.transactionProvide.loadProductItems((response)=>{
+    //   console.log(response);
+    // })
 
     ///product /productCategory/ProductSubCategory
   }

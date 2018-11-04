@@ -1,6 +1,6 @@
 webpackJsonp([1],{
 
-/***/ 287:
+/***/ 281:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -8,7 +8,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CategoryPageModule", function() { return CategoryPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__category__ = __webpack_require__(291);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__category__ = __webpack_require__(285);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -38,15 +38,15 @@ var CategoryPageModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 291:
+/***/ 285:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CategoryPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -81,7 +81,7 @@ var CategoryPage = /** @class */ (function () {
     };
     CategoryPage.prototype.loadallproduct = function () {
         var _this = this;
-        this.http.get('http://localhost:4000/api/category').subscribe(function (result) {
+        this.http.get('http://localhost:4000/api/productCategory').subscribe(function (result) {
             console.log(result);
             _this.products = JSON.parse(result['_body']);
         });
@@ -89,8 +89,9 @@ var CategoryPage = /** @class */ (function () {
     CategoryPage.prototype.newCategory = function () {
         this.productDTO = { Category: '', IndexId: '', Id: '' };
     };
-    CategoryPage.prototype.createProduct = function () {
+    CategoryPage.prototype.createCategory = function () {
         var _this = this;
+        console.log("CreateProduct");
         var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
         headers.append("Accept", 'application/json');
         headers.append('Content-Type', 'application/json');
@@ -100,7 +101,7 @@ var CategoryPage = /** @class */ (function () {
             "IndexId": this.productDTO.IndexId,
         };
         if (this.productDTO.Id != "") {
-            this.http.put("http://localhost:4000/api/category/" + this.productDTO.Id, postData, requestOptions)
+            this.http.put("http://localhost:4000/api/productCategory/" + this.productDTO.Id, postData, requestOptions)
                 .subscribe(function (data) {
                 if (data['_body']) {
                     var result = JSON.parse(data['_body']);
@@ -118,7 +119,7 @@ var CategoryPage = /** @class */ (function () {
             });
         }
         else {
-            this.http.post("http://localhost:4000/api/category", postData, requestOptions)
+            this.http.post("http://localhost:4000/api/productCategory", postData, requestOptions)
                 .subscribe(function (data) {
                 if (data['_body']) {
                     var result = JSON.parse(data['_body']);
@@ -161,7 +162,7 @@ var CategoryPage = /** @class */ (function () {
     };
     CategoryPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-category',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/category/category.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <button ion-button end navPop >\n            <ion-icon  name="close"></ion-icon>\n          </button>\n      <ion-title>Category</ion-title>\n      \n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-list>\n  \n                <ion-item>\n                  <ion-label> IndexId</ion-label>\n                  <ion-input [(ngModel)]="productDTO.IndexId" type="number"></ion-input>\n                </ion-item>\n                <ion-item>\n                    <ion-label> Name</ion-label>\n                    <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n                  </ion-item>\n              \n               \n              </ion-list>\n              \n        </ion-col>\n        <ion-col col-4  >\n            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n            <ion-list style="height:30vh; overflow:auto">\n              <ion-item *ngFor="let item of Category" (click)="selectItem(item)">\n                {{ item.Name }}\n              </ion-item>\n              <ion-item>\n                Item One\n              </ion-item>\n            </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n   \n  \n    <button ion-button (click)="newProdut()" >New</button>\n    <button ion-button (click)="createProduct()" >Save</button>\n    <button ion-button >Delete</button>\n  </ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/category/category.html"*/,
+            selector: 'page-category',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/category/category.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n    <ion-navbar>\n        <button ion-button end navPop >\n            <ion-icon  name="close"></ion-icon>\n          </button>\n      <ion-title>Category</ion-title>\n      \n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-list>\n  \n                <ion-item>\n                  <ion-label> IndexId</ion-label>\n                  <ion-input [(ngModel)]="productDTO.IndexId" type="number"></ion-input>\n                </ion-item>\n                <ion-item>\n                    <ion-label> Name</ion-label>\n                    <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n                  </ion-item>\n              \n               \n              </ion-list>\n              \n        </ion-col>\n        <ion-col col-4  >\n            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n            <ion-list style="height:30vh; overflow:auto">\n              <ion-item *ngFor="let item of Category" (click)="selectItem(item)">\n                {{ item.Name }}\n              </ion-item>\n              <ion-item>\n                Item One\n              </ion-item>\n            </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n   \n  \n    <button ion-button (click)="newProdut()" >New</button>\n    <button ion-button (click)="createCategory()" >Save</button>\n    <button ion-button >Delete</button>\n  </ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/category/category.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]])
     ], CategoryPage);
