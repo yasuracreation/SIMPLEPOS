@@ -1,14 +1,14 @@
 webpackJsonp([5],{
 
-/***/ 103:
+/***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(157);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(159);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -60,18 +60,14 @@ var AdminPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 104:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderPanelPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(41);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -84,94 +80,43 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
-
-
 /**
- * Generated class for the LoginPage page.
+ * Generated class for the OrderPanelPage page.
  *
  * See https://ionicframework.com/docs/components/#navigation for more info on
  * Ionic pages and navigation.
  */
-var LoginPage = /** @class */ (function () {
-    function LoginPage(navCtrl, navParams, http, alertCtrl, storage) {
+var OrderPanelPage = /** @class */ (function () {
+    function OrderPanelPage(navCtrl, navParams, transactionProvide) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
-        this.http = http;
-        this.alertCtrl = alertCtrl;
-        this.storage = storage;
-        this.auth = { UserName: '', Password: '', OrgID: '' };
+        this.transactionProvide = transactionProvide;
+        this.Resources = { ProductItems: [], ProductCategory: [], ProductSubCategory: [] };
+        this.Ordersummery = { Grandtotal: 0, NetPrice: 0, NoOfItem: 0, Discount: 0 };
     }
-    LoginPage.prototype.logintoSystem = function () {
-        var _this = this;
-        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
-        headers.append("Accept", 'application/json');
-        headers.append('Content-Type', 'application/json');
-        var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
-        var postData = {
-            "UserName": this.auth.UserName,
-            "Password": this.auth.Password,
-            "OrgID": this.auth.OrgID
-        };
-        this.http.post("http://localhost:4000/api/login", postData, requestOptions)
-            .subscribe(function (data) {
-            if (data['_body']) {
-                var result = JSON.parse(data['_body']);
-                console.log(result);
-                if (result.IsSuccess) {
-                    _this.presentConfirm(result.Message);
-                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
-                    _this.storage.set("token", result.token);
-                }
-                else {
-                    _this.presentConfirm(result.Message);
-                }
-            }
-        }, function (error) {
-            var result = JSON.parse(error['_body']);
-            _this.presentConfirm(result.Message);
-            console.log(error);
+    OrderPanelPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad OrderPanelPage');
+    };
+    OrderPanelPage.prototype.loadResources = function () {
+        this.transactionProvide.LoadResources(function (result) {
+            console.log(result);
         });
+        ///product /productCategory/ProductSubCategory
     };
-    LoginPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad LoginPage');
-    };
-    LoginPage.prototype.presentConfirm = function (message) {
-        var alert = this.alertCtrl.create({
-            title: 'Login ',
-            message: message,
-            buttons: [
-                {
-                    text: 'Cancel',
-                    role: 'cancel',
-                    handler: function () {
-                        console.log('Cancel clicked');
-                    }
-                },
-                {
-                    text: 'Got It',
-                    handler: function () {
-                        console.log('Buy clicked');
-                    }
-                }
-            ]
-        });
-        alert.present();
-    };
-    LoginPage = __decorate([
+    OrderPanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Simple POS</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding col-12 col-md-6 col-lg-6 col-xl-3>\n  <section class="home-container" style="text-align: center">\n\n    <div class="row header">\n\n      <div class="col text-center">\n        [Simple POS]\n      </div>\n    </div>\n    <div class="row icon-row" style="text-align: center">\n      POINT OF SALE SYSTEM\n    </div>\n  </section>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n\n          <ion-item>\n            <ion-label stacked>Username</ion-label>\n            <ion-input [(ngModel)]="auth.UserName"  type="text"></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="auth.Password" type="password"></ion-input>\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button (click)="logintoSystem()" ion-button full>Login</button>\n        <button ion-button clear>Forget Password</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/,
+            selector: 'page-order-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 style="background-color:blueviolet; min-height: 100vh">\n        <ion-grid>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th>Price</th>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n              </table>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    5\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    150\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n      <ion-col style="background-color:bisque">\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n              <ion-scroll scrollX="true" style="width:100vw;height:75px" >\n                  <ion-segment color="secondary">\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                    </ion-segment> \n              </ion-scroll>\n             \n          </ion-row>\n          <ion-row>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-2>\n                  <ion-col>\n                    <ion-grid>\n                      <ion-row>\n                          <ion-col>\n                              SubCat1\n                            </ion-col>\n                      </ion-row>\n                      <ion-row>\n                          <ion-col>\n                              SubCat1\n                            </ion-col>\n                      </ion-row>\n                    </ion-grid>\n                  </ion-col>\n                </ion-col>\n                <ion-col>\n                    <ion-grid>\n                      <ion-row>\n                          <ion-col col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem" >Items</ion-col>\n                      </ion-row>\n                    </ion-grid>\n\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n        \n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]])
-    ], LoginPage);
-    return LoginPage;
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
+    ], OrderPanelPage);
+    return OrderPanelPage;
 }());
 
-//# sourceMappingURL=login.js.map
+//# sourceMappingURL=order-panel.js.map
 
 /***/ }),
 
-/***/ 113:
+/***/ 116:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -184,32 +129,32 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 113;
+webpackEmptyAsyncContext.id = 116;
 
 /***/ }),
 
-/***/ 155:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin/admin.module": [
-		278,
+		286,
 		4
 	],
 	"../pages/category/category.module": [
-		279,
-		2
+		287,
+		1
 	],
 	"../pages/login/login.module": [
-		280,
+		288,
 		3
 	],
 	"../pages/order-panel/order-panel.module": [
-		281,
-		1
+		289,
+		2
 	],
 	"../pages/payment-panel/payment-panel.module": [
-		282,
+		290,
 		0
 	]
 };
@@ -224,20 +169,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 155;
+webpackAsyncContext.id = 157;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 156:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -419,15 +364,15 @@ var ProductAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 157:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductCategoryAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -600,13 +545,65 @@ var ProductCategoryAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 203:
+/***/ 162:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionProvideProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(255);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the TransactionProvideProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var TransactionProvideProvider = /** @class */ (function () {
+    function TransactionProvideProvider(http) {
+        this.http = http;
+        console.log('Hello TransactionProvideProvider Provider');
+    }
+    TransactionProvideProvider.prototype.LoadResources = function (calback) {
+        var _this = this;
+        //ProductItems
+        this.http.get('http://localhost:4000/api/product').subscribe(function (result) {
+            console.log(result);
+            _this.productItems = JSON.parse(result['_body']);
+            console.log(_this.productItems);
+            calback(result);
+        });
+        //ProductCategory
+        //productSubcategory
+    };
+    TransactionProvideProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], TransactionProvideProvider);
+    return TransactionProvideProvider;
+}());
+
+//# sourceMappingURL=transaction-provide.js.map
+
+/***/ }),
+
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -657,13 +654,124 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 204:
+/***/ 207:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(160);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+/**
+ * Generated class for the LoginPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var LoginPage = /** @class */ (function () {
+    function LoginPage(navCtrl, navParams, http, alertCtrl, storage) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
+        this.storage = storage;
+        this.auth = { UserName: '', Password: '', OrgID: '' };
+    }
+    LoginPage.prototype.logintoSystem = function () {
+        var _this = this;
+        var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postData = {
+            "UserName": this.auth.UserName,
+            "Password": this.auth.Password,
+            "OrgID": this.auth.OrgID
+        };
+        this.http.post("http://localhost:4000/api/login", postData, requestOptions)
+            .subscribe(function (data) {
+            if (data['_body']) {
+                var result = JSON.parse(data['_body']);
+                console.log(result);
+                if (result.IsSuccess) {
+                    _this.presentConfirm(result.Message);
+                    _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_4__home_home__["a" /* HomePage */]);
+                    _this.storage.set("token", result.token);
+                }
+                else {
+                    _this.presentConfirm(result.Message);
+                }
+            }
+        }, function (error) {
+            var result = JSON.parse(error['_body']);
+            _this.presentConfirm(result.Message);
+            console.log(error);
+        });
+    };
+    LoginPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad LoginPage');
+    };
+    LoginPage.prototype.presentConfirm = function (message) {
+        var alert = this.alertCtrl.create({
+            title: 'Login ',
+            message: message,
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Got It',
+                    handler: function () {
+                        console.log('Buy clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    LoginPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-login',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Simple POS</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding col-12 col-md-6 col-lg-6 col-xl-3>\n  <section class="home-container" style="text-align: center">\n\n    <div class="row header">\n\n      <div class="col text-center">\n        [Simple POS]\n      </div>\n    </div>\n    <div class="row icon-row" style="text-align: center">\n      POINT OF SALE SYSTEM\n    </div>\n  </section>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n\n          <ion-item>\n            <ion-label stacked>Username</ion-label>\n            <ion-input [(ngModel)]="auth.UserName"  type="text"></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="auth.Password" type="password"></ion-input>\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button (click)="logintoSystem()" ion-button full>Login</button>\n        <button ion-button clear>Forget Password</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]])
+    ], LoginPage);
+    return LoginPage;
+}());
+
+//# sourceMappingURL=login.js.map
+
+/***/ }),
+
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(227);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(209);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -671,32 +779,34 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 227:
+/***/ 229:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(270);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(278);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(206);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_admin_admin__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(156);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_admin_admin__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -755,7 +865,8 @@ var AppModule = /** @class */ (function () {
             providers: [
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
-                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] }
+                { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
+                __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]
             ]
         })
     ], AppModule);
@@ -766,19 +877,19 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 270:
+/***/ 278:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(199);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(202);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(80);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(203);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admin__ = __webpack_require__(103);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(284);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(202);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admin__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -827,75 +938,29 @@ var MyApp = /** @class */ (function () {
     };
     __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_8" /* ViewChild */])(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]),
-        __metadata("design:type", typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */]) === "function" && _a || Object)
+        __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/app/app.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]) === "function" && _d || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
     return MyApp;
-    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
 
-/***/ 284:
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderPanelPage; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-/**
- * Generated class for the OrderPanelPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-var OrderPanelPage = /** @class */ (function () {
-    function OrderPanelPage(navCtrl, navParams) {
-        this.navCtrl = navCtrl;
-        this.navParams = navParams;
-    }
-    OrderPanelPage.prototype.ionViewDidLoad = function () {
-        console.log('ionViewDidLoad OrderPanelPage');
-    };
-    OrderPanelPage = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 style="background-color:blueviolet; min-height: 100vh">\n        <ion-grid>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th>Price</th>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n              </table>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    5\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    150\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n      <ion-col style="background-color:bisque">\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n              <ion-scroll scrollX="true" style="width:100vw;height:75px" >\n                  <ion-segment color="secondary">\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                      <ion-segment-button>\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>\n                    </ion-segment> \n              </ion-scroll>\n             \n          </ion-row>\n          <ion-row>\n            <ion-col style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n            <ion-col  style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n            <ion-col  style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n            <ion-col  style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n            <ion-col  style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n            <ion-col  style="background-color:brown; height: 150px;padding: 15px; margin: 5px;">Items</ion-col>\n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
-        }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
-    ], OrderPanelPage);
-    return OrderPanelPage;
-}());
-
-//# sourceMappingURL=order-panel.js.map
-
-/***/ }),
-
-/***/ 80:
+/***/ 81:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(20);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(41);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(42);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1079,7 +1144,7 @@ var HomePage = /** @class */ (function () {
                     _this.presentConfirm(result.Message);
                 }
                 else {
-                    _this.presentConfirm("Product Creation Fail");
+                    _this.presentConfirm("Order Save Fail");
                 }
             }
             console.log(data['_body']);
@@ -1124,5 +1189,5 @@ var HomePage = /** @class */ (function () {
 
 /***/ })
 
-},[204]);
+},[208]);
 //# sourceMappingURL=main.js.map

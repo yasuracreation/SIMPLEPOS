@@ -196,7 +196,7 @@ export class HomePage {
           if (result.IsSucess) {
             this.presentConfirm(result.Message);
           } else {
-            this.presentConfirm("Product Creation Fail")
+            this.presentConfirm("Order Save Fail")
           }
         }
         console.log(data['_body']);

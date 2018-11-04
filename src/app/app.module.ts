@@ -14,6 +14,7 @@ import { ProductCategoryAddPage } from '../pages/product-category-add/product-ca
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { OrderPanelPage } from '../pages/order-panel/order-panel';
+import { TransactionProvideProvider } from '../providers/transaction-provide/transaction-provide';
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +46,8 @@ import { OrderPanelPage } from '../pages/order-panel/order-panel';
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TransactionProvideProvider
   ]
 })
 export class AppModule {}
