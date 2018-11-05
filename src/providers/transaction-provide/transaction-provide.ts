@@ -127,4 +127,61 @@ export class TransactionProvideProvider {
         console.log(error);
       });
   }
+
+  //productCategory
+  GetProductSubCategory(callback) {
+    this.http.get('http://localhost:4000/api/productSubCategory').subscribe(result => {
+      console.log(result);
+      callback(JSON.parse(result['_body']));
+
+    })
+
+  }
+  CreateProductSubCategory(request, callback) {
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+    const requestOptions = new RequestOptions({ headers: headers });
+    let postData = {
+      "Name": request.Name,
+      "CategoryId":request.CategoryId
+
+    }
+    this.http.post("http://localhost:4000/api/productSubCategory", postData, requestOptions)
+      .subscribe(data => {
+        if (data['_body']) {
+          let result = JSON.parse(data['_body']);
+          callback(result)
+        }
+        console.log(data['_body']);
+      }, error => {
+        console.log(error);
+      });
+
+  }
+
+  UpdateProductSubCategory(request, CategoryID, callback) {
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+    const requestOptions = new RequestOptions({ headers: headers });
+    let postData = {
+      "Name": request.Name,
+      "CategoryId":request.CategoryId
+    }
+
+    this.http.put("http://localhost:4000/api/productSubCategory/" + request.Id, postData, requestOptions)
+      .subscribe(data => {
+        if (data['_body']) {
+          let result = JSON.parse(data['_body']);
+          callback(result)
+        }
+        console.log(data['_body']);
+
+      }, error => {
+        console.log(error);
+      });
+  }
+
+
 }

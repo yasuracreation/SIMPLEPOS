@@ -1,14 +1,14 @@
 webpackJsonp([2],{
 
-/***/ 283:
+/***/ 287:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OrderPanelPageModule", function() { return OrderPanelPageModule; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SubCategoryAddPageModule", function() { return SubCategoryAddPageModule; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__order_panel__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sub_category_add__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,23 +18,23 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-var OrderPanelPageModule = /** @class */ (function () {
-    function OrderPanelPageModule() {
+var SubCategoryAddPageModule = /** @class */ (function () {
+    function SubCategoryAddPageModule() {
     }
-    OrderPanelPageModule = __decorate([
+    SubCategoryAddPageModule = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["I" /* NgModule */])({
             declarations: [
-                __WEBPACK_IMPORTED_MODULE_2__order_panel__["a" /* OrderPanelPage */],
+                __WEBPACK_IMPORTED_MODULE_2__sub_category_add__["a" /* SubCategoryAddPage */],
             ],
             imports: [
-                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__order_panel__["a" /* OrderPanelPage */]),
+                __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPageModule */].forChild(__WEBPACK_IMPORTED_MODULE_2__sub_category_add__["a" /* SubCategoryAddPage */]),
             ],
         })
-    ], OrderPanelPageModule);
-    return OrderPanelPageModule;
+    ], SubCategoryAddPageModule);
+    return SubCategoryAddPageModule;
 }());
 
-//# sourceMappingURL=order-panel.module.js.map
+//# sourceMappingURL=sub-category-add.module.js.map
 
 /***/ })
 

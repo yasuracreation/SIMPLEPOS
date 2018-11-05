@@ -15,6 +15,8 @@ import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
 import { OrderPanelPage } from '../pages/order-panel/order-panel';
 import { TransactionProvideProvider } from '../providers/transaction-provide/transaction-provide';
+import { SubCategoryAddPage } from '../pages/sub-category-add/sub-category-add';
+import { FilterPipe } from '../pipes/filter/filter';
 @NgModule({
   declarations: [
     MyApp,
@@ -24,7 +26,9 @@ import { TransactionProvideProvider } from '../providers/transaction-provide/tra
     ProductAddPage,
     LoginPage,
     ProductCategoryAddPage,
-    OrderPanelPage
+    OrderPanelPage,
+    SubCategoryAddPage,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -41,7 +45,8 @@ import { TransactionProvideProvider } from '../providers/transaction-provide/tra
     ProductAddPage,
     LoginPage,
     ProductCategoryAddPage,
-    OrderPanelPage
+    OrderPanelPage,
+    SubCategoryAddPage
   ],
   providers: [
     StatusBar,

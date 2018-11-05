@@ -19,13 +19,34 @@ export class OrderPanelPage {
 
   Resources ={ProductItems:[],ProductCategory:[],ProductSubCategory:[]};
   Ordersummery = {Grandtotal:0,NetPrice:0,NoOfItem:0,Discount:0};
-
+  SelectedCategory
+  SelectedSubCategory
+  FilterSubCategory
+  FilterProductItems
   constructor(public navCtrl: NavController, public navParams: NavParams,public transactionProvide:TransactionProvideProvider) {
   }
-
+  
   ionViewDidLoad() {
     console.log('ionViewDidLoad OrderPanelPage');
     this.loadResources()
+  }
+  selectCategory(category){
+    this.SelectedCategory = category;
+    this.FilterSubCategory = this.Resources.ProductSubCategory.filter((item)=>{
+      return item.CategoryId == category._id
+    });
+    console.log(this.FilterSubCategory);
+    console.log(category);
+    console.log(this.Resources)
+    // this.FilterProductItems = this.Resources.ProductItems.filter((items)=>{
+    //   items.SubCategoryId == this.FilterSubCategory[0]._id;
+    // })
+  }
+  selectSubCategory(subCategory){
+    this.SelectedSubCategory = subCategory;
+  }
+  selectProduct(item){
+
   }
   loadResources(){
     this.transactionProvide.LoadResources((result)=>{
@@ -33,6 +54,7 @@ export class OrderPanelPage {
       this.Resources.ProductCategory = result.productCategory.data;
       this.Resources.ProductSubCategory = result.productSubcategory.data;
       this.Resources.ProductItems = result.productItems.data;
+      this.selectCategory(this.Resources.ProductCategory[0])
     });
 
     // this.transactionProvide.loadProductItems((response)=>{

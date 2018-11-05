@@ -1,4 +1,4 @@
-webpackJsonp([5],{
+webpackJsonp([6],{
 
 /***/ 104:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -6,9 +6,10 @@ webpackJsonp([5],{
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_category_add_sub_category_add__ = __webpack_require__(105);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -18,6 +19,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -46,10 +48,14 @@ var AdminPage = /** @class */ (function () {
             var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__["a" /* ProductCategoryAddPage */]);
             modal.present();
         }
+        else if (type == "SubCategory") {
+            var modal = this.modalCtrl.create(__WEBPACK_IMPORTED_MODULE_4__sub_category_add_sub_category_add__["a" /* SubCategoryAddPage */]);
+            modal.present();
+        }
     };
     AdminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/'<!--\n  Generated template for the AdminPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Admin</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-md-6 col-lg-6 col-xl-3>\n        <ion-list>\n          <ion-list-header>\n            Master Data\n          </ion-list-header>\n          <ion-item (click)="presentModal(\'product\')"> Product</ion-item>\n          <ion-item>Services</ion-item>\n          <ion-item>Ingradiant</ion-item>\n          <ion-item (click)="presentModal(\'category\')">Category</ion-item>\n          <ion-item>Type</ion-item>\n          <ion-list-header>\n            Cancellation\n          </ion-list-header>\n          <ion-item > Order </ion-item>\n          <ion-item>Reservation </ion-item>\n          <ion-item>Payment </ion-item>\n\n        </ion-list>\n      </ion-col>\n      <ion-col>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/,
+            selector: 'page-admin',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/'<!--\n  Generated template for the AdminPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Admin</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-md-6 col-lg-6 col-xl-3>\n        <ion-list>\n          <ion-list-header>\n            Master Data\n          </ion-list-header>\n          <ion-item (click)="presentModal(\'product\')"> Product</ion-item>\n          <ion-item>Services</ion-item>\n          <ion-item>Ingradiant</ion-item>\n          <ion-item (click)="presentModal(\'category\')">Category</ion-item>\n          <ion-item (click)="presentModal(\'SubCategory\')">  Type</ion-item>\n          <ion-list-header>\n            Cancellation\n          </ion-list-header>\n          <ion-item > Order </ion-item>\n          <ion-item>Reservation </ion-item>\n          <ion-item>Payment </ion-item>\n\n        </ion-list>\n      </ion-col>\n      <ion-col>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
     ], AdminPage);
@@ -64,10 +70,220 @@ var AdminPage = /** @class */ (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubCategoryAddPage; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(48);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+/**
+ * Generated class for the ProductCategoryAddPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+var SubCategoryAddPage = /** @class */ (function () {
+    function SubCategoryAddPage(navCtrl, navParams, http, alertCtrl, transactionProvider) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.http = http;
+        this.alertCtrl = alertCtrl;
+        this.transactionProvider = transactionProvider;
+        this.searchQuery = '';
+        this.productDTO = { Id: '', Name: '', CategoryId: '' };
+    }
+    SubCategoryAddPage.prototype.ionViewDidLoad = function () {
+        console.log('ionViewDidLoad ProductAddPage');
+        this.loadallproduct();
+    };
+    SubCategoryAddPage.prototype.getItems = function (ev) {
+        // Reset items back to all of the items
+        // set val to the value of the searchbar
+        var val = ev.target.value;
+        // if the value is an empty string don't filter the items
+        if (val && val.trim() != '') {
+            this.productfilter = this.SubCategory.filter(function (item) {
+                return (item.Name.toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+        }
+        else {
+            this.productfilter = this.SubCategory;
+        }
+    };
+    SubCategoryAddPage.prototype.selectItem = function (item) {
+        console.log(item);
+        this.productDTO.Name = item.Name;
+        this.productDTO.Id = item._id;
+    };
+    SubCategoryAddPage.prototype.createCategory = function () {
+        // var headers = new Headers();
+        // headers.append("Accept", 'application/json');
+        // headers.append('Content-Type', 'application/json');
+        // const requestOptions = new RequestOptions({ headers: headers });
+        // let postData = {
+        //   "Name": this.productDTO.Name  
+        var _this = this;
+        // }
+        if (this.productDTO.Id != "") {
+            this.transactionProvider.UpdateProductSubCategory(this.productDTO, this.productDTO.Id, function (result) {
+                // console.log(result);
+                if (result.IsSucess) {
+                    _this.presentConfirm(result.Message);
+                }
+                else {
+                    _this.presentConfirm(result.Message.message);
+                }
+            });
+            // this.http.put("http://localhost:4000/api/productCategory/" + this.productDTO.Id, postData, requestOptions)
+            //   .subscribe(data => {
+            //     if (data['_body']) {
+            //       let result = JSON.parse(data['_body']);
+            //       console.log(result)
+            //       if (result.IsSucess) {
+            //         this.presentConfirm(result.Message);
+            //       } else {
+            //         this.presentConfirm("Product Creation Fail")
+            //       }
+            //     }
+            //     console.log(data['_body']);
+            //   }, error => {
+            //     console.log(error);
+            //   });
+        }
+        else {
+            this.transactionProvider.CreateProductSubCategory(this.productDTO, function (result) {
+                console.log(result);
+                if (result.IsSucess) {
+                    _this.presentConfirm(result.Message);
+                }
+                else {
+                    _this.presentConfirm(result.Message.message);
+                }
+            });
+            // this.http.post("http://localhost:4000/api/productCategory", postData, requestOptions)
+            //   .subscribe(data => {
+            //     if (data['_body']) {
+            //       let result = JSON.parse(data['_body']);
+            //       console.log(result)
+            //       if (result.IsSucess) {
+            //         this.presentConfirm(result.Message);
+            //       } else {
+            //         this.presentConfirm(result.Message.message)
+            //       }
+            //     }
+            //     console.log(data['_body']);
+            //   }, error => {
+            //     console.log(error);
+            //   });
+        }
+        this.loadallproduct();
+    };
+    SubCategoryAddPage.prototype.loadallproduct = function () {
+        var _this = this;
+        this.transactionProvider.GetProductSubCategory(function (result) {
+            console.log(result);
+            _this.SubCategory = result.data;
+            _this.productfilter = _this.SubCategory;
+        });
+        this.transactionProvider.GetProductCategory(function (response) {
+            console.log(response);
+            _this.Category = response.data;
+        });
+        // this.http.get('http://localhost:4000/api/category').subscribe(result => {
+        //   console.log(result);
+        //   this.Category = JSON.parse(result['_body']);
+        //   this.productfilter = this.Category;
+        // })
+    };
+    SubCategoryAddPage.prototype.newCategory = function () {
+        this.productDTO = { Name: '', Id: '', CategoryId: '' };
+    };
+    SubCategoryAddPage.prototype.deleteCategory = function () {
+        var _this = this;
+        if (this.productDTO.Id != "") {
+            var headers = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["a" /* Headers */]();
+            headers.append("Accept", 'application/json');
+            headers.append('Content-Type', 'application/json');
+            var requestOptions = new __WEBPACK_IMPORTED_MODULE_2__angular_http__["d" /* RequestOptions */]({ headers: headers });
+            this.http.delete("http://localhost:4000/api/category/" + this.productDTO.Id, requestOptions)
+                .subscribe(function (data) {
+                if (data['_body']) {
+                    var result = JSON.parse(data['_body']);
+                    console.log(result);
+                    if (result.IsSucess) {
+                        _this.presentConfirm(result.Message);
+                    }
+                    else {
+                        _this.presentConfirm("Product Category Delete Fail");
+                    }
+                }
+                console.log(data['_body']);
+            }, function (error) {
+                console.log(error);
+            });
+        }
+        else {
+            this.presentConfirm("Select Category to delete");
+        }
+    };
+    SubCategoryAddPage.prototype.presentConfirm = function (message) {
+        var alert = this.alertCtrl.create({
+            title: 'Product ',
+            message: message,
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function () {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Got It',
+                    handler: function () {
+                        console.log('Buy clicked');
+                    }
+                }
+            ]
+        });
+        alert.present();
+    };
+    SubCategoryAddPage = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
+            selector: 'page-sub-category-add',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n  <ion-navbar>\n      <button ion-button end navPop >\n          <ion-icon  name="close"></ion-icon>\n        </button>\n    <ion-title>SubCategory</ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n          <ion-list>\n              <ion-item>\n                <ion-label>Sub Category Name</ion-label>\n                <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n              </ion-item>   \n              <ion-item>\n                <ion-label>Category Name</ion-label>\n                <ion-select [(ngModel)]="productDTO.CategoryId">\n                  <ion-option *ngFor="let item of Category" value="{{item._id}}">{{item.Name}}</ion-option>\n                </ion-select>\n              </ion-item>     \n            </ion-list>\n            \n      </ion-col>\n      <ion-col col-4  >\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          <ion-list style="height:30vh; overflow:auto">\n            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n              {{ item.Name }}\n            </ion-item>\n           \n          </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n \n\n  <button ion-button (click)="newCategory()" >New</button>\n  <button ion-button (click)="createCategory()" >Save</button>\n  <button ion-button (click)="deleteCategory()" >Delete</button>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/,
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
+    ], SubCategoryAddPage);
+    return SubCategoryAddPage;
+}());
+
+//# sourceMappingURL=sub-category-add.js.map
+
+/***/ }),
+
+/***/ 106:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderPanelPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -98,6 +314,23 @@ var OrderPanelPage = /** @class */ (function () {
         console.log('ionViewDidLoad OrderPanelPage');
         this.loadResources();
     };
+    OrderPanelPage.prototype.selectCategory = function (category) {
+        this.SelectedCategory = category;
+        this.FilterSubCategory = this.Resources.ProductSubCategory.filter(function (item) {
+            return item.CategoryId == category._id;
+        });
+        console.log(this.FilterSubCategory);
+        console.log(category);
+        console.log(this.Resources);
+        // this.FilterProductItems = this.Resources.ProductItems.filter((items)=>{
+        //   items.SubCategoryId == this.FilterSubCategory[0]._id;
+        // })
+    };
+    OrderPanelPage.prototype.selectSubCategory = function (subCategory) {
+        this.SelectedSubCategory = subCategory;
+    };
+    OrderPanelPage.prototype.selectProduct = function (item) {
+    };
     OrderPanelPage.prototype.loadResources = function () {
         var _this = this;
         this.transactionProvide.LoadResources(function (result) {
@@ -105,6 +338,7 @@ var OrderPanelPage = /** @class */ (function () {
             _this.Resources.ProductCategory = result.productCategory.data;
             _this.Resources.ProductSubCategory = result.productSubcategory.data;
             _this.Resources.ProductItems = result.productItems.data;
+            _this.selectCategory(_this.Resources.ProductCategory[0]);
         });
         // this.transactionProvide.loadProductItems((response)=>{
         //   console.log(response);
@@ -113,18 +347,19 @@ var OrderPanelPage = /** @class */ (function () {
     };
     OrderPanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 style="background-color:blueviolet; min-height: 100vh">\n        <ion-grid>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th>Price</th>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n              </table>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    5\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    150\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n      <ion-col style="background-color:bisque">\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n              <ion-scroll scrollX="true" style="width:100vw;height:75px" >\n                  <ion-segment color="secondary">\n                      <ion-segment-button *ngFor="let item of Resources.ProductCategory">\n                        <ion-icon></ion-icon>\n                        Books\n                      </ion-segment-button>                    \n                    </ion-segment> \n              </ion-scroll>\n             \n          </ion-row>\n          <ion-row>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-2>\n                  <ion-col>\n                    <ion-grid>\n                      <ion-row>\n                          <ion-col>\n                              SubCat1\n                            </ion-col>\n                      </ion-row>\n                      <ion-row>\n                          <ion-col>\n                              SubCat1\n                            </ion-col>\n                      </ion-row>\n                    </ion-grid>\n                  </ion-col>\n                </ion-col>\n                <ion-col>\n                    <ion-grid>\n                      <ion-row>\n                          <ion-col col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>\n                          <ion-col  col-2 class="orderpanelItem" >Items</ion-col>\n                      </ion-row>\n                    </ion-grid>\n\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n        \n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
+            selector: 'page-order-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 style="background-color:blueviolet; min-height: 100vh">\n        <ion-grid>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th>Price</th>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n              </table>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    5\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    150\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n      <ion-col style="background-color:bisque">\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n              <ion-scroll scrollX="true" style="width:100vw;height:75px" >\n                  <ion-segment color="secondary">\n                      <ion-segment-button (click)="selectCategory(item)" *ngFor="let item of Resources.ProductCategory">\n                        <ion-icon></ion-icon>\n                        {{item.Name}}\n                      </ion-segment-button>                    \n                    </ion-segment> \n              </ion-scroll>\n             \n          </ion-row>\n          <ion-row>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-2>\n                  <ion-col>\n                    <ion-grid>\n                      <ion-row *ngFor="let item of FilterSubCategory" >\n                          <ion-col (click)="selectSubCategory(item)">\n                             {{item.Name}}\n                            </ion-col>\n                      </ion-row>\n                      \n                    </ion-grid>\n                  </ion-col>\n                </ion-col>\n                <ion-col>\n                    <ion-grid>\n                      <ion-row>\n                          <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of Resources.ProductItems"  class="orderpanelItem">{{item.Name}}</ion-col>\n                          \n                      </ion-row>\n                    </ion-grid>\n\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n        \n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]) === "function" && _c || Object])
     ], OrderPanelPage);
     return OrderPanelPage;
+    var _a, _b, _c;
 }());
 
 //# sourceMappingURL=order-panel.js.map
 
 /***/ }),
 
-/***/ 114:
+/***/ 115:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -137,33 +372,37 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 114;
+webpackEmptyAsyncContext.id = 115;
 
 /***/ }),
 
-/***/ 156:
+/***/ 157:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin/admin.module": [
-		280,
-		4
+		282,
+		5
 	],
 	"../pages/category/category.module": [
-		281,
+		283,
 		1
 	],
 	"../pages/login/login.module": [
-		282,
-		3
+		284,
+		4
 	],
 	"../pages/order-panel/order-panel.module": [
-		283,
-		2
+		285,
+		3
 	],
 	"../pages/payment-panel/payment-panel.module": [
-		284,
+		286,
 		0
+	],
+	"../pages/sub-category-add/sub-category-add.module": [
+		287,
+		2
 	]
 };
 function webpackAsyncContext(req) {
@@ -177,20 +416,20 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 156;
+webpackAsyncContext.id = 157;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 157:
+/***/ 158:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -372,17 +611,17 @@ var ProductAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 158:
+/***/ 159:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductCategoryAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(48);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -569,23 +808,22 @@ var ProductCategoryAddPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-product-category-add',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n        <button ion-button end navPop >\n            <ion-icon  name="close"></ion-icon>\n          </button>\n      <ion-title>Category</ion-title>\n      \n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-list>\n                <ion-item>\n                  <ion-label>Category Name</ion-label>\n                  <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n                </ion-item>     \n              </ion-list>\n              \n        </ion-col>\n        <ion-col col-4  >\n            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n            <ion-list style="height:30vh; overflow:auto">\n              <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n                {{ item.Name }}\n              </ion-item>\n             \n            </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n   \n  \n    <button ion-button (click)="newCategory()" >New</button>\n    <button ion-button (click)="createCategory()" >Save</button>\n    <button ion-button (click)="deleteCategory()" >Delete</button>\n  </ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
     ], ProductCategoryAddPage);
     return ProductCategoryAddPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=product-category-add.js.map
 
 /***/ }),
 
-/***/ 204:
+/***/ 205:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ListPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -636,18 +874,18 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 206:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(160);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -747,13 +985,13 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(207);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(229);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
 Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_1__app_module__["a" /* AppModule */]);
@@ -761,33 +999,37 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 
 /***/ }),
 
-/***/ 229:
+/***/ 230:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__ = __webpack_require__(28);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(272);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(273);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(205);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_admin_admin__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(157);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__ = __webpack_require__(80);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(158);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(159);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__ = __webpack_require__(48);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sub_category_add_sub_category_add__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pipes_filter_filter__ = __webpack_require__(281);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
 
 
 
@@ -817,7 +1059,9 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__["a" /* ProductAddPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__["a" /* ProductCategoryAddPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__["a" /* OrderPanelPage */]
+                __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__["a" /* OrderPanelPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_sub_category_add_sub_category_add__["a" /* SubCategoryAddPage */],
+                __WEBPACK_IMPORTED_MODULE_17__pipes_filter_filter__["a" /* FilterPipe */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -828,7 +1072,8 @@ var AppModule = /** @class */ (function () {
                         { loadChildren: '../pages/category/category.module#CategoryPageModule', name: 'CategoryPage', segment: 'category', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/order-panel/order-panel.module#OrderPanelPageModule', name: 'OrderPanelPage', segment: 'order-panel', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/payment-panel/payment-panel.module#PaymentPanelPageModule', name: 'PaymentPanelPage', segment: 'payment-panel', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/payment-panel/payment-panel.module#PaymentPanelPageModule', name: 'PaymentPanelPage', segment: 'payment-panel', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sub-category-add/sub-category-add.module#SubCategoryAddPageModule', name: 'SubCategoryAddPage', segment: 'sub-category-add', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_13__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -842,7 +1087,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__["a" /* ProductAddPage */],
                 __WEBPACK_IMPORTED_MODULE_12__pages_login_login__["a" /* LoginPage */],
                 __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__["a" /* ProductCategoryAddPage */],
-                __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__["a" /* OrderPanelPage */]
+                __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__["a" /* OrderPanelPage */],
+                __WEBPACK_IMPORTED_MODULE_16__pages_sub_category_add_sub_category_add__["a" /* SubCategoryAddPage */]
             ],
             providers: [
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
@@ -859,19 +1105,19 @@ var AppModule = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 272:
+/***/ 273:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(200);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(204);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(205);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admin__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -934,13 +1180,57 @@ var MyApp = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 80:
+/***/ 281:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return FilterPipe; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+
+/**
+ * Generated class for the FilterPipe pipe.
+ *
+ * See https://angular.io/api/core/Pipe for more info on Angular Pipes.
+ */
+var FilterPipe = /** @class */ (function () {
+    function FilterPipe() {
+    }
+    /**
+     * Takes a value and makes it lowercase.
+     */
+    FilterPipe.prototype.transform = function (items, filter) {
+        if (!items || !filter) {
+            return items;
+        }
+        // filter items array, items which match and return true will be
+        // kept, false will be filtered out
+        return items.filter(function (item) { return item.CategoryId == filter._id; });
+    };
+    FilterPipe = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["S" /* Pipe */])({
+            name: 'filter',
+        })
+    ], FilterPipe);
+    return FilterPipe;
+}());
+
+//# sourceMappingURL=filter.js.map
+
+/***/ }),
+
+/***/ 48:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionProvideProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1103,12 +1393,58 @@ var TransactionProvideProvider = /** @class */ (function () {
             console.log(error);
         });
     };
+    //productCategory
+    TransactionProvideProvider.prototype.GetProductSubCategory = function (callback) {
+        this.http.get('http://localhost:4000/api/productSubCategory').subscribe(function (result) {
+            console.log(result);
+            callback(JSON.parse(result['_body']));
+        });
+    };
+    TransactionProvideProvider.prototype.CreateProductSubCategory = function (request, callback) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postData = {
+            "Name": request.Name,
+            "CategoryId": request.CategoryId
+        };
+        this.http.post("http://localhost:4000/api/productSubCategory", postData, requestOptions)
+            .subscribe(function (data) {
+            if (data['_body']) {
+                var result = JSON.parse(data['_body']);
+                callback(result);
+            }
+            console.log(data['_body']);
+        }, function (error) {
+            console.log(error);
+        });
+    };
+    TransactionProvideProvider.prototype.UpdateProductSubCategory = function (request, CategoryID, callback) {
+        var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Headers */]();
+        headers.append("Accept", 'application/json');
+        headers.append('Content-Type', 'application/json');
+        var requestOptions = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["d" /* RequestOptions */]({ headers: headers });
+        var postData = {
+            "Name": request.Name,
+            "CategoryId": request.CategoryId
+        };
+        this.http.put("http://localhost:4000/api/productSubCategory/" + request.Id, postData, requestOptions)
+            .subscribe(function (data) {
+            if (data['_body']) {
+                var result = JSON.parse(data['_body']);
+                callback(result);
+            }
+            console.log(data['_body']);
+        }, function (error) {
+            console.log(error);
+        });
+    };
     TransactionProvideProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]])
     ], TransactionProvideProvider);
     return TransactionProvideProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=transaction-provide.js.map
@@ -1121,9 +1457,9 @@ var TransactionProvideProvider = /** @class */ (function () {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(18);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(30);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(34);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -1352,5 +1688,5 @@ var HomePage = /** @class */ (function () {
 
 /***/ })
 
-},[206]);
+},[207]);
 //# sourceMappingURL=main.js.map

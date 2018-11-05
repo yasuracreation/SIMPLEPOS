@@ -79,9 +79,9 @@
           <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">
               <ion-scroll scrollX="true" style="width:100vw;height:75px" >
                   <ion-segment color="secondary">
-                      <ion-segment-button *ngFor="let item of Resources.ProductCategory">
+                      <ion-segment-button (click)="selectCategory(item)" *ngFor="let item of Resources.ProductCategory">
                         <ion-icon></ion-icon>
-                        Books
+                        {{item.Name}}
                       </ion-segment-button>                    
                     </ion-segment> 
               </ion-scroll>
@@ -93,28 +93,20 @@
                 <ion-col col-2>
                   <ion-col>
                     <ion-grid>
-                      <ion-row>
-                          <ion-col>
-                              SubCat1
+                      <ion-row *ngFor="let item of FilterSubCategory" >
+                          <ion-col (click)="selectSubCategory(item)">
+                             {{item.Name}}
                             </ion-col>
                       </ion-row>
-                      <ion-row>
-                          <ion-col>
-                              SubCat1
-                            </ion-col>
-                      </ion-row>
+                      
                     </ion-grid>
                   </ion-col>
                 </ion-col>
                 <ion-col>
                     <ion-grid>
                       <ion-row>
-                          <ion-col col-2 class="orderpanelItem">Items</ion-col>
-                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>
-                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>
-                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>
-                          <ion-col  col-2 class="orderpanelItem">Items</ion-col>
-                          <ion-col  col-2 class="orderpanelItem" >Items</ion-col>
+                          <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of Resources.ProductItems"  class="orderpanelItem">{{item.Name}}</ion-col>
+                          
                       </ion-row>
                     </ion-grid>
 
