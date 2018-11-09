@@ -18,7 +18,8 @@ import { TransactionProvideProvider } from '../../providers/transaction-provide/
 export class ProductCategoryAddPage {
 
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController,public transactionProvider:TransactionProvideProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private http: Http, private alertCtrl: AlertController,public transactionProvider:TransactionProvideProvider) {
   }
   searchQuery: string = '';
 
@@ -112,6 +113,7 @@ export class ProductCategoryAddPage {
     this.loadallproduct();
 
   }
+
   loadallproduct() {
     
     this.transactionProvider.GetProductCategory((result)=>{

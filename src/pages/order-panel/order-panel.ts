@@ -42,11 +42,17 @@ export class OrderPanelPage {
     //   items.SubCategoryId == this.FilterSubCategory[0]._id;
     // })
   }
-  selectSubCategory(subCategory){
-    this.SelectedSubCategory = subCategory;
+  selectSubCategory(subCat){
+    // this.SelectedSubCategory = subCategory;
+    console.log(subCat)
+    this.SelectedCategory = subCat;
+    this.FilterProductItems = this.Resources.ProductItems.filter((item)=>{
+      return item.SubCategory == subCat._id
+    });
+    console.log(this.FilterProductItems)
   }
-  selectProduct(item){
-
+  selectProduct(subCat){
+   
   }
   loadResources(){
     this.transactionProvide.LoadResources((result)=>{
