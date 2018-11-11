@@ -17,6 +17,7 @@ import { OrderPanelPage } from '../pages/order-panel/order-panel';
 import { TransactionProvideProvider } from '../providers/transaction-provide/transaction-provide';
 import { SubCategoryAddPage } from '../pages/sub-category-add/sub-category-add';
 import { FilterPipe } from '../pipes/filter/filter';
+import { BillCalculationProvider } from '../providers/bill-calculation/bill-calculation';
 @NgModule({
   declarations: [
     MyApp,
@@ -52,7 +53,8 @@ import { FilterPipe } from '../pipes/filter/filter';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    TransactionProvideProvider
+    TransactionProvideProvider,
+    BillCalculationProvider
   ]
 })
 export class AppModule {}

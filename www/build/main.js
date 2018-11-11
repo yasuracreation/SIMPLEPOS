@@ -1,15 +1,15 @@
 webpackJsonp([6],{
 
-/***/ 104:
+/***/ 105:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_category_add_sub_category_add__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__product_add_product_add__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__product_category_add_product_category_add__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__sub_category_add_sub_category_add__ = __webpack_require__(106);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -55,7 +55,7 @@ var AdminPage = /** @class */ (function () {
     };
     AdminPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-admin',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/'<!--\n  Generated template for the AdminPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Admin</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-md-6 col-lg-6 col-xl-3>\n        <ion-list>\n          <ion-list-header>\n            Master Data\n          </ion-list-header>\n          <ion-item (click)="presentModal(\'product\')"> Product</ion-item>\n          <ion-item>Services</ion-item>\n          <ion-item>Ingradiant</ion-item>\n          <ion-item (click)="presentModal(\'category\')">Category</ion-item>\n          <ion-item (click)="presentModal(\'SubCategory\')">  Type</ion-item>\n          <ion-list-header>\n            Cancellation\n          </ion-list-header>\n          <ion-item > Order </ion-item>\n          <ion-item>Reservation </ion-item>\n          <ion-item>Payment </ion-item>\n\n        </ion-list>\n      </ion-col>\n      <ion-col>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/admin/admin.html"*/,
+            selector: 'page-admin',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/admin/admin.html"*/'<!--\n  Generated template for the AdminPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Admin</ion-title>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-12 col-md-6 col-lg-6 col-xl-3>\n        <ion-list>\n          <ion-list-header>\n            Master Data\n          </ion-list-header>\n          <ion-item (click)="presentModal(\'product\')"> Product</ion-item>\n          <ion-item>Services</ion-item>\n          <ion-item>Ingradiant</ion-item>\n          <ion-item (click)="presentModal(\'category\')">Category</ion-item>\n          <ion-item (click)="presentModal(\'SubCategory\')">  Type</ion-item>\n          <ion-list-header>\n            Cancellation\n          </ion-list-header>\n          <ion-item > Order </ion-item>\n          <ion-item>Reservation </ion-item>\n          <ion-item>Payment </ion-item>\n\n        </ion-list>\n      </ion-col>\n      <ion-col>\n\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/admin/admin.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* ModalController */]])
     ], AdminPage);
@@ -66,17 +66,17 @@ var AdminPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 105:
+/***/ 106:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SubCategoryAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -265,7 +265,7 @@ var SubCategoryAddPage = /** @class */ (function () {
     };
     SubCategoryAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-sub-category-add',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n  <ion-navbar>\n      <button ion-button end navPop >\n          <ion-icon  name="close"></ion-icon>\n        </button>\n    <ion-title>SubCategory</ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n          <ion-list>\n              <ion-item>\n                <ion-label>Sub Category Name</ion-label>\n                <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n              </ion-item>   \n              <ion-item>\n                <ion-label>Category Name</ion-label>\n                <ion-select [(ngModel)]="productDTO.CategoryId">\n                  <ion-option *ngFor="let item of Category" value="{{item._id}}">{{item.Name}}</ion-option>\n                </ion-select>\n              </ion-item>     \n            </ion-list>\n            \n      </ion-col>\n      <ion-col col-4  >\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          <ion-list style="height:30vh; overflow:auto">\n            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n              {{ item.Name }}\n            </ion-item>\n           \n          </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n \n\n  <button ion-button (click)="newCategory()" >New</button>\n  <button ion-button (click)="createCategory()" >Save</button>\n  <button ion-button (click)="deleteCategory()" >Delete</button>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/,
+            selector: 'page-sub-category-add',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n  <ion-navbar>\n      <button ion-button end navPop >\n          <ion-icon  name="close"></ion-icon>\n        </button>\n    <ion-title>SubCategory</ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n          <ion-list>\n              <ion-item>\n                <ion-label>Sub Category Name</ion-label>\n                <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n              </ion-item>   \n              <ion-item>\n                <ion-label>Category Name</ion-label>\n                <ion-select [(ngModel)]="productDTO.CategoryId">\n                  <ion-option *ngFor="let item of Category" value="{{item._id}}">{{item.Name}}</ion-option>\n                </ion-select>\n              </ion-item>     \n            </ion-list>\n            \n      </ion-col>\n      <ion-col col-4  >\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          <ion-list style="height:30vh; overflow:auto">\n            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n              {{ item.Name }}\n            </ion-item>\n           \n          </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n \n\n  <button ion-button (click)="newCategory()" >New</button>\n  <button ion-button (click)="createCategory()" >Save</button>\n  <button ion-button (click)="deleteCategory()" >Delete</button>\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/sub-category-add/sub-category-add.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
     ], SubCategoryAddPage);
@@ -276,14 +276,14 @@ var SubCategoryAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 106:
+/***/ 107:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return OrderPanelPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -303,12 +303,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * Ionic pages and navigation.
  */
 var OrderPanelPage = /** @class */ (function () {
-    function OrderPanelPage(navCtrl, navParams, transactionProvide) {
+    function OrderPanelPage(navCtrl, navParams, transactionProvide, alertCtrl) {
         this.navCtrl = navCtrl;
         this.navParams = navParams;
         this.transactionProvide = transactionProvide;
+        this.alertCtrl = alertCtrl;
         this.Resources = { ProductItems: [], ProductCategory: [], ProductSubCategory: [] };
         this.Ordersummery = { Grandtotal: 0, NetPrice: 0, NoOfItem: 0, Discount: 0 };
+        this.AddedProductItems = [];
     }
     OrderPanelPage.prototype.ionViewDidLoad = function () {
         console.log('ionViewDidLoad OrderPanelPage');
@@ -335,7 +337,54 @@ var OrderPanelPage = /** @class */ (function () {
         });
         console.log(this.FilterProductItems);
     };
-    OrderPanelPage.prototype.selectProduct = function (subCat) {
+    OrderPanelPage.prototype.selectProduct = function (product) {
+        product.Qty = 1;
+        console.log(product);
+        this.AddedProductItems.push(product);
+        console.log(this.AddedProductItems);
+        this.calculatePrice(this.AddedProductItems);
+    };
+    OrderPanelPage.prototype.calculatePrice = function (addeditems) {
+        var _this = this;
+        this.Ordersummery = { Grandtotal: 0, NetPrice: 0, NoOfItem: 0, Discount: 0 };
+        addeditems.forEach(function (items) {
+            _this.Ordersummery.NetPrice += items.Price;
+        });
+    };
+    OrderPanelPage.prototype.AddQty = function (item) {
+        var _this = this;
+        var qty = item.Qty;
+        var alert = this.alertCtrl.create({
+            title: 'Item Quantity',
+            inputs: [
+                {
+                    name: 'Qty',
+                    placeholder: 'Qty',
+                    type: 'number',
+                    value: qty
+                }
+            ],
+            buttons: [
+                {
+                    text: 'Cancel',
+                    role: 'cancel',
+                    handler: function (data) {
+                        console.log('Cancel clicked');
+                    }
+                },
+                {
+                    text: 'Add',
+                    handler: function (data) {
+                        item.Qty;
+                        var index = _this.AddedProductItems.indexOf(item);
+                        _this.AddedProductItems[index].Qty = data.Qty;
+                        _this.AddedProductItems[index].Price = data.Qty * item.Price;
+                        _this.calculatePrice(_this.AddedProductItems);
+                    }
+                }
+            ]
+        });
+        alert.present();
     };
     OrderPanelPage.prototype.loadResources = function () {
         var _this = this;
@@ -353,18 +402,19 @@ var OrderPanelPage = /** @class */ (function () {
     };
     OrderPanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-order-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 style="background-color:blueviolet; min-height: 100vh">\n        <ion-grid>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th>Price</th>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n                <tr>\n                  <td>Test</td>\n                  <td>2</td>\n                  <td>120 Rs</td>\n                </tr>\n              </table>\n\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    5\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    150\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n            </ion-col>\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n      <ion-col style="">\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n            <ion-scroll scrollX="true" style="width:100vw;height:75px">\n              <ion-segment color="secondary">\n                <ion-segment-button (click)="selectCategory(item)" *ngFor="let item of Resources.ProductCategory">\n                  <ion-icon></ion-icon>\n                  {{item.Name}}\n                </ion-segment-button>\n              </ion-segment>\n            </ion-scroll>\n\n          </ion-row>\n          <ion-row>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-3 style="background-color: darkgray; min-height: 100vh">\n                  \n                    <ion-grid >\n                      <ion-row *ngFor="let item of FilterSubCategory">\n                        <ion-col style="align-items: flex-end " (click)="selectSubCategory(item)" class="square-container">\n                        \n                         <ion-item>\n                          {{item.Name}}\n                         </ion-item> \n                        \n                        </ion-col>\n                      </ion-row>\n\n                    </ion-grid>\n                \n                </ion-col>\n                <ion-col>\n                  <!-- <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of FilterProductItems"  class="orderpanelItem">{{item.Name}}</ion-col> -->\n                  <div class="square-container">\n                    <div (click)="selectProduct(item)" *ngFor="let item of FilterProductItems" class="orderpanelItem"\n                      class="square">\n                      <div class="content">{{item.Name}}</div>\n                    </div>\n                  </div>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n\n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
+            selector: 'page-order-panel',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/'<!--\n  Generated template for the OrderPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>orderPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n \n  <ion-grid>\n    <ion-row>\n      <ion-col col-4 class="leftPanel">\n        <ion-grid>\n          <ion-row>\n              <ion-grid>\n                  <ion-row>\n                   <ion-col>\n                           <ion-item>\n                              <ion-label color="primary" floating>Item Code</ion-label>\n                              <ion-input type="text"></ion-input>\n                           </ion-item> \n                        <button ion-button small>Add</button>\n                    </ion-col>\n                  </ion-row>\n                </ion-grid>\n          </ion-row>\n          <ion-row>\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n              <table width="100%">\n                <tr>\n                  <th>Item</th>\n                  <th>Qty</th>\n                  <th style="text-align: right">Price</th>\n                </tr>\n                <tr *ngFor="let product of AddedProductItems">\n                  <td style="text-align: center">{{product.Name}}</td>\n                  <td (click)="AddQty(product)" style="text-align: center">{{product.Qty}}</td>\n                  <td style="text-align: right">{{product.Price}}Rs</td>\n                </tr>\n              </table>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-grid>\n                <ion-row>\n                  <ion-col>\n                    no Of Items\n                  </ion-col>\n                  <ion-col>\n                    {{AddedProductItems.length}}\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Net Total\n                  </ion-col>\n                  <ion-col>\n                    {{Ordersummery.NetPrice}}\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col>\n                    Grand Total\n                  </ion-col>\n                  <ion-col>\n                    450\n                  </ion-col>\n                </ion-row>\n              </ion-grid>\n                <button ion-button full>Save</button>\n            </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n      <ion-col >\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n            <ion-scroll scrollX="true" style="width:100vw;height:75px">\n              <ion-segment color="secondary">\n                <ion-segment-button (click)="selectCategory(item)" *ngFor="let item of Resources.ProductCategory">\n                  <ion-icon></ion-icon>\n                  {{item.Name}}\n                </ion-segment-button>\n              </ion-segment>\n            </ion-scroll>\n\n          </ion-row>\n          <ion-row>\n            <ion-grid>\n              <ion-row>\n                <ion-col col-3 style="background-color: darkgray; min-height: 100vh">\n                  \n                    <ion-grid >\n                      <ion-row *ngFor="let item of FilterSubCategory">\n                        <ion-col style="align-items: flex-end " (click)="selectSubCategory(item)" class="square-container">\n                        \n                         <ion-item>\n                          {{item.Name}}\n                         </ion-item> \n                        \n                        </ion-col>\n                      </ion-row>\n\n                    </ion-grid>\n                \n                </ion-col>\n                <ion-col>\n                  <!-- <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of FilterProductItems"  class="orderpanelItem">{{item.Name}}</ion-col> -->\n                  <div class="square-container">\n                    <div (click)="selectProduct(item)" *ngFor="let item of FilterProductItems" class="orderpanelItem"\n                      class="square">\n                      <div class="content">{{item.Name}}</div>\n                    </div>\n                  </div>\n                </ion-col>\n              </ion-row>\n            </ion-grid>\n\n\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/order-panel/order-panel.html"*/,
         }),
-        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
+        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object])
     ], OrderPanelPage);
     return OrderPanelPage;
+    var _a, _b, _c, _d;
 }());
 
 //# sourceMappingURL=order-panel.js.map
 
 /***/ }),
 
-/***/ 115:
+/***/ 118:
 /***/ (function(module, exports) {
 
 function webpackEmptyAsyncContext(req) {
@@ -377,36 +427,36 @@ function webpackEmptyAsyncContext(req) {
 webpackEmptyAsyncContext.keys = function() { return []; };
 webpackEmptyAsyncContext.resolve = webpackEmptyAsyncContext;
 module.exports = webpackEmptyAsyncContext;
-webpackEmptyAsyncContext.id = 115;
+webpackEmptyAsyncContext.id = 118;
 
 /***/ }),
 
-/***/ 157:
+/***/ 159:
 /***/ (function(module, exports, __webpack_require__) {
 
 var map = {
 	"../pages/admin/admin.module": [
-		282,
+		290,
 		5
 	],
 	"../pages/category/category.module": [
-		283,
+		289,
 		1
 	],
 	"../pages/login/login.module": [
-		284,
+		291,
 		4
 	],
 	"../pages/order-panel/order-panel.module": [
-		285,
+		292,
 		3
 	],
 	"../pages/payment-panel/payment-panel.module": [
-		286,
+		293,
 		0
 	],
 	"../pages/sub-category-add/sub-category-add.module": [
-		287,
+		294,
 		2
 	]
 };
@@ -421,22 +471,22 @@ function webpackAsyncContext(req) {
 webpackAsyncContext.keys = function webpackAsyncContextKeys() {
 	return Object.keys(map);
 };
-webpackAsyncContext.id = 157;
+webpackAsyncContext.id = 159;
 module.exports = webpackAsyncContext;
 
 /***/ }),
 
-/***/ 158:
+/***/ 160:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -509,8 +559,10 @@ var ProductAddPage = /** @class */ (function () {
     };
     ProductAddPage.prototype.selectProductCategory = function (category) {
         this.productSubCategory = this.Resources.ProductSubCategory.filter(function (elem) {
-            return elem.CategoryId == category._id;
+            return elem.CategoryId == category;
         });
+        console.log(this.productSubCategory);
+        console.log(this.Resources.ProductSubCategory);
     };
     ProductAddPage.prototype.createProduct = function () {
         var _this = this;
@@ -626,7 +678,7 @@ var ProductAddPage = /** @class */ (function () {
     };
     ProductAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-product-add',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-add/product-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button end navPop >\n          <ion-icon  name="close"></ion-icon>\n        </button>\n    <ion-title>Product</ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n          <ion-list>\n\n              <ion-item>\n                <ion-label>Product Name</ion-label>\n                <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-label>Product Category</ion-label>\n                <ion-select [(ngModel)]="productDTO.Category" (ionChange)="selectProductCategory(productDTO.Category)">\n                    <ion-option *ngFor="let item of ProductCategory" [value]="item._id">{{item.Name}}</ion-option>\n                    <!-- <ion-option value="2">Frame</ion-option>\n                    <ion-option value="3">Mug</ion-option> -->\n                    \n                  </ion-select>\n                \n              </ion-item>\n              <ion-item>\n                  <ion-label>SubCategory</ion-label>\n                  <ion-select [(ngModel)]="productDTO.SubCategory">\n                    <ion-option *ngFor="let item of productSubCategory" [value]="item._id">{{item.Name}}</ion-option>\n                    \n                    </ion-select>\n                  \n              </ion-item>\n              <ion-item>\n                <ion-label>Product Price</ion-label>\n                <ion-input [(ngModel)]="productDTO.Price" type="nmumber"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Size</ion-label>\n                  <ion-input [(ngModel)]="productDTO.Size" type="number"></ion-input>\n              </ion-item>\n            </ion-list>\n            \n      </ion-col>\n      <ion-col col-4  >\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          <ion-list style="height:30vh; overflow:auto">\n            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n              {{ item.Name }}\n            </ion-item>\n           \n          </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n \n\n  <button ion-button (click)="newProdut()" >New</button>\n  <button ion-button (click)="createProduct()" >Save</button>\n  <button ion-button (click)="deleteProduct()" >Delete</button>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-add/product-add.html"*/,
+            selector: 'page-product-add',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/product-add/product-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n      <button ion-button end navPop >\n          <ion-icon  name="close"></ion-icon>\n        </button>\n    <ion-title>Product</ion-title>\n    \n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n          <ion-list>\n\n              <ion-item>\n                <ion-label>Product Name</ion-label>\n                <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n              </ion-item>\n              <ion-item>\n                <ion-label>Product Category</ion-label>\n                <ion-select [(ngModel)]="productDTO.Category" (ionChange)="selectProductCategory(productDTO.Category)">\n                    <ion-option *ngFor="let item of ProductCategory" [value]="item._id">{{item.Name}}</ion-option>\n                    <!-- <ion-option value="2">Frame</ion-option>\n                    <ion-option value="3">Mug</ion-option> -->\n                    \n                  </ion-select>\n                \n              </ion-item>\n              <ion-item>\n                  <ion-label>SubCategory</ion-label>\n                  <ion-select [(ngModel)]="productDTO.SubCategory">\n                    <ion-option *ngFor="let item of productSubCategory" [value]="item._id">{{item.Name}}</ion-option>\n                    \n                    </ion-select>\n                  \n              </ion-item>\n              <ion-item>\n                <ion-label>Product Price</ion-label>\n                <ion-input [(ngModel)]="productDTO.Price" type="nmumber"></ion-input>\n              </ion-item>\n              <ion-item>\n                  <ion-label>Size</ion-label>\n                  <ion-input [(ngModel)]="productDTO.Size" type="number"></ion-input>\n              </ion-item>\n            </ion-list>\n            \n      </ion-col>\n      <ion-col col-4  >\n          <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n          <ion-list style="height:30vh; overflow:auto">\n            <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n              {{ item.Name }}\n            </ion-item>\n           \n          </ion-list>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n \n\n  <button ion-button (click)="newProdut()" >New</button>\n  <button ion-button (click)="createProduct()" >Save</button>\n  <button ion-button (click)="deleteProduct()" >Delete</button>\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/product-add/product-add.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
@@ -638,17 +690,17 @@ var ProductAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 159:
+/***/ 161:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ProductCategoryAddPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(42);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__ = __webpack_require__(43);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -833,7 +885,7 @@ var ProductCategoryAddPage = /** @class */ (function () {
     };
     ProductCategoryAddPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-product-category-add',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n        <button ion-button end navPop >\n            <ion-icon  name="close"></ion-icon>\n          </button>\n      <ion-title>Category</ion-title>\n      \n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-list>\n                <ion-item>\n                  <ion-label>Category Name</ion-label>\n                  <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n                </ion-item>     \n              </ion-list>\n              \n        </ion-col>\n        <ion-col col-4  >\n            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n            <ion-list style="height:30vh; overflow:auto">\n              <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n                {{ item.Name }}\n              </ion-item>\n             \n            </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n   \n  \n    <button ion-button (click)="newCategory()" >New</button>\n    <button ion-button (click)="createCategory()" >Save</button>\n    <button ion-button (click)="deleteCategory()" >Delete</button>\n  </ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/,
+            selector: 'page-product-category-add',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/'<!--\n  Generated template for the ProductAddPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  \n    <ion-navbar>\n        <button ion-button end navPop >\n            <ion-icon  name="close"></ion-icon>\n          </button>\n      <ion-title>Category</ion-title>\n      \n    </ion-navbar>\n  \n  </ion-header>\n  \n  \n  <ion-content padding>\n    <ion-grid>\n      <ion-row>\n        <ion-col>\n            <ion-list>\n                <ion-item>\n                  <ion-label>Category Name</ion-label>\n                  <ion-input [(ngModel)]="productDTO.Name" type="text"></ion-input>\n                </ion-item>     \n              </ion-list>\n              \n        </ion-col>\n        <ion-col col-4  >\n            <ion-searchbar (ionInput)="getItems($event)"></ion-searchbar>\n            <ion-list style="height:30vh; overflow:auto">\n              <ion-item *ngFor="let item of productfilter" (click)="selectItem(item)">\n                {{ item.Name }}\n              </ion-item>\n             \n            </ion-list>\n        </ion-col>\n      </ion-row>\n    </ion-grid>\n   \n  \n    <button ion-button (click)="newCategory()" >New</button>\n    <button ion-button (click)="createCategory()" >Save</button>\n    <button ion-button (click)="deleteCategory()" >Delete</button>\n  </ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/product-category-add/product-category-add.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]])
@@ -845,7 +897,7 @@ var ProductCategoryAddPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 205:
+/***/ 207:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -890,7 +942,7 @@ var ListPage = /** @class */ (function () {
     };
     ListPage = ListPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/list/list.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ListPage);
@@ -902,18 +954,18 @@ var ListPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 206:
+/***/ 208:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginPage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ionic_storage__ = __webpack_require__(162);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1002,7 +1054,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Simple POS</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding col-12 col-md-6 col-lg-6 col-xl-3>\n  <section class="home-container" style="text-align: center">\n\n    <div class="row header">\n\n      <div class="col text-center">\n        [Simple POS]\n      </div>\n    </div>\n    <div class="row icon-row" style="text-align: center">\n      POINT OF SALE SYSTEM\n    </div>\n  </section>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n\n          <ion-item>\n            <ion-label stacked>Username</ion-label>\n            <ion-input [(ngModel)]="auth.UserName"  type="text"></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="auth.Password" type="password"></ion-input>\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button (click)="logintoSystem()" ion-button full>Login</button>\n        <button ion-button clear>Forget Password</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/login/login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/login/login.html"*/'<!--\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>Simple POS</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding col-12 col-md-6 col-lg-6 col-xl-3>\n  <section class="home-container" style="text-align: center">\n\n    <div class="row header">\n\n      <div class="col text-center">\n        [Simple POS]\n      </div>\n    </div>\n    <div class="row icon-row" style="text-align: center">\n      POINT OF SALE SYSTEM\n    </div>\n  </section>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-list>\n\n          <ion-item>\n            <ion-label stacked>Username</ion-label>\n            <ion-input [(ngModel)]="auth.UserName"  type="text"></ion-input>\n          </ion-item>\n\n          <ion-item>\n            <ion-label stacked>Password</ion-label>\n            <ion-input [(ngModel)]="auth.Password" type="password"></ion-input>\n          </ion-item>\n\n        </ion-list>\n\n      </ion-col>\n    </ion-row>\n    <ion-row>\n      <ion-col>\n        <button (click)="logintoSystem()" ion-button full>Login</button>\n        <button ion-button clear>Forget Password</button>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/login/login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_5__ionic_storage__["b" /* Storage */]])
     ], LoginPage);
@@ -1013,12 +1065,12 @@ var LoginPage = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 207:
+/***/ 209:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__ = __webpack_require__(210);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__app_module__ = __webpack_require__(230);
 
 
@@ -1036,26 +1088,28 @@ Object(__WEBPACK_IMPORTED_MODULE_0__angular_platform_browser_dynamic__["a" /* pl
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_ionic_angular__ = __webpack_require__(15);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__app_component__ = __webpack_require__(273);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_admin_admin__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(158);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(159);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(206);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(160);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(106);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__ = __webpack_require__(42);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sub_category_add_sub_category_add__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__angular_http__ = __webpack_require__(27);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_admin_admin__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_product_add_product_add__ = __webpack_require__(160);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_product_category_add_product_category_add__ = __webpack_require__(161);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_login_login__ = __webpack_require__(208);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_13__ionic_storage__ = __webpack_require__(162);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_14__pages_order_panel_order_panel__ = __webpack_require__(107);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__ = __webpack_require__(43);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_16__pages_sub_category_add_sub_category_add__ = __webpack_require__(106);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_17__pipes_filter_filter__ = __webpack_require__(281);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_18__providers_bill_calculation_bill_calculation__ = __webpack_require__(282);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1096,8 +1150,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/category/category.module#CategoryPageModule', name: 'CategoryPage', segment: 'category', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/order-panel/order-panel.module#OrderPanelPageModule', name: 'OrderPanelPage', segment: 'order-panel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/payment-panel/payment-panel.module#PaymentPanelPageModule', name: 'PaymentPanelPage', segment: 'payment-panel', priority: 'low', defaultHistory: [] },
@@ -1122,7 +1176,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_7__ionic_native_status_bar__["a" /* StatusBar */],
                 __WEBPACK_IMPORTED_MODULE_8__ionic_native_splash_screen__["a" /* SplashScreen */],
                 { provide: __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* ErrorHandler */], useClass: __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["c" /* IonicErrorHandler */] },
-                __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]
+                __WEBPACK_IMPORTED_MODULE_15__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */],
+                __WEBPACK_IMPORTED_MODULE_18__providers_bill_calculation_bill_calculation__["a" /* BillCalculationProvider */]
             ]
         })
     ], AppModule);
@@ -1140,12 +1195,12 @@ var AppModule = /** @class */ (function () {
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MyApp; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(201);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(204);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(81);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(205);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admin__ = __webpack_require__(104);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(106);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__ = __webpack_require__(203);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__ = __webpack_require__(206);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__pages_home_home__ = __webpack_require__(82);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__pages_list_list__ = __webpack_require__(207);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__pages_admin_admin__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__pages_order_panel_order_panel__ = __webpack_require__(107);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1197,7 +1252,7 @@ var MyApp = /** @class */ (function () {
         __metadata("design:type", __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* Nav */])
     ], MyApp.prototype, "nav", void 0);
     MyApp = __decorate([
-        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/app/app.html"*/
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/app/app.html"*/'<ion-menu [content]="content">\n  <ion-header>\n    <ion-toolbar>\n      <ion-title>Menu</ion-title>\n    </ion-toolbar>\n  </ion-header>\n\n  <ion-content>\n    <ion-list>\n      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">\n        {{p.title}}\n      </button>\n    </ion-list>\n  </ion-content>\n\n</ion-menu>\n\n<!-- Disable swipe-to-go-back because it\'s poor UX to combine STGB with side menus -->\n<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/app/app.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["j" /* Platform */], __WEBPACK_IMPORTED_MODULE_2__ionic_native_status_bar__["a" /* StatusBar */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_splash_screen__["a" /* SplashScreen */]])
     ], MyApp);
@@ -1252,12 +1307,52 @@ var FilterPipe = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 42:
+/***/ 282:
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return BillCalculationProvider; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_common_http__ = __webpack_require__(283);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__(0);
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+/*
+  Generated class for the BillCalculationProvider provider.
+
+  See https://angular.io/guide/dependency-injection for more info on providers
+  and Angular DI.
+*/
+var BillCalculationProvider = /** @class */ (function () {
+    function BillCalculationProvider(http) {
+        this.http = http;
+        console.log('Hello BillCalculationProvider Provider');
+    }
+    BillCalculationProvider = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injectable */])(),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_common_http__["a" /* HttpClient */]])
+    ], BillCalculationProvider);
+    return BillCalculationProvider;
+}());
+
+//# sourceMappingURL=bill-calculation.js.map
+
+/***/ }),
+
+/***/ 43:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return TransactionProvideProvider; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_add_operator_map__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_core__ = __webpack_require__(0);
@@ -1479,14 +1574,14 @@ var TransactionProvideProvider = /** @class */ (function () {
 
 /***/ }),
 
-/***/ 81:
+/***/ 82:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return HomePage; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(15);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(25);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_http__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__ = __webpack_require__(31);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_map__);
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
@@ -1703,7 +1798,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw">\n            <ion-segment *ngFor="let item of productCategory" [(ngModel)]="icons" color="secondary">\n              <ion-segment-button value="{{item.ProductCategoryid}}" (click)="selectCategory(item.ProductCategoryid)">\n                <ion-icon name="{{item.icon}}"></ion-icon>\n                {{item.Name}}\n              </ion-segment-button>\n            </ion-segment>\n          </ion-row>\n          <ion-row>\n            <ion-col col-4>\n              <ion-item-group>\n                <ion-item-divider color="light">Items</ion-item-divider>\n                <ion-item *ngFor="let item of products" (click)="additem(item)">{{item.Name}}</ion-item>\n                <!-- <ion-item>8R</ion-item>\n                <ion-item>12R</ion-item>\n                <ion-item>12x18</ion-item> -->\n              </ion-item-group>\n            </ion-col>\n            <!-- <ion-col>\n               <ion-grid>\n                <ion-row>\n                  <h2>Item Detail</h2>\n                </ion-row>\n\n                <ion-row>\n\n                  <ion-col col-2>\n                    Name\n                  </ion-col>\n                  <ion-col col-4>\n                    {{selectedProduct.name}}\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col col-2>\n                    Qty\n                  </ion-col>\n                  <ion-col col-4>\n                    <input type="text" [(ngModel)]="selectedProduct.qty" />\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col col-2>\n                    Price\n                  </ion-col>\n                  <ion-col col-4>\n                    <input type="text" [(ngModel)]="selectedProduct.price" />\n                  </ion-col>\n                </ion-row>\n              </ion-grid> \n            </ion-col> -->\n          </ion-row>\n          <!-- <ion-row>\n            <ion-col>\n              <button ion-button full (click)="additem()">Add</button>\n            </ion-col>\n            <ion-col>\n             \n            </ion-col>\n          </ion-row> -->\n        </ion-grid>\n      </ion-col>\n      <ion-col>\n        <ion-grid>\n          <ion-row>\n            <h1>Bill</h1>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-list>\n                <ion-item>\n                  <ion-row>\n                    <ion-col col-4>Name</ion-col>\n                    <ion-col>Qty</ion-col>\n                    <ion-col>Price</ion-col>\n                  </ion-row>\n                </ion-item>\n                <ion-item *ngFor="let item of addeditems">\n                  <ion-row>\n                    <ion-col col-4>{{item.Name}}</ion-col>\n                    <ion-col><ion-icon name="arrow-back"></ion-icon> <span>{{item.qty}} </span> <ion-icon name="arrow-forward"></ion-icon></ion-col>\n                    <ion-col>{{item.Price}} RS</ion-col>\n                  </ion-row>\n\n                </ion-item>\n\n              </ion-list>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col></ion-col>\n            <ion-col >\n                <button  ion-button full (click)="removeitems()">Clear</button>\n               \n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Net Qty\n            </ion-col>\n            <ion-col>\n              {{netQty}}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Net Total\n            </ion-col>\n            <ion-col>\n              {{totaln  }}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Discount\n            </ion-col>\n            <ion-col>\n              15%\n            </ion-col>\n          </ion-row>\n          <hr>\n          <ion-row>\n            <ion-col>\n              <h2> Grand Total</h2>\n            </ion-col>\n            <ion-col>\n              <h2>{{grandAmount + total }}  Rs</h2>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n                <button  ion-button full (click)="discount()">Discount</button>                \n            </ion-col>\n            <ion-col>\n              <button  ion-button full (click)="SaveOrder()">Save</button>\n            </ion-col>\n            <ion-col>\n                <button  ion-button full (click)="Save()">Cancel</button>\n              </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n\n</ion-content>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/home/home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Home</ion-title>\n\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-grid>\n    <ion-row>\n      <ion-col>\n        <ion-grid>\n          <ion-row style="overflow-x: auto; width:50vw">\n            <ion-segment *ngFor="let item of productCategory" [(ngModel)]="icons" color="secondary">\n              <ion-segment-button value="{{item.ProductCategoryid}}" (click)="selectCategory(item.ProductCategoryid)">\n                <ion-icon name="{{item.icon}}"></ion-icon>\n                {{item.Name}}\n              </ion-segment-button>\n            </ion-segment>\n          </ion-row>\n          <ion-row>\n            <ion-col col-4>\n              <ion-item-group>\n                <ion-item-divider color="light">Items</ion-item-divider>\n                <ion-item *ngFor="let item of products" (click)="additem(item)">{{item.Name}}</ion-item>\n                <!-- <ion-item>8R</ion-item>\n                <ion-item>12R</ion-item>\n                <ion-item>12x18</ion-item> -->\n              </ion-item-group>\n            </ion-col>\n            <!-- <ion-col>\n               <ion-grid>\n                <ion-row>\n                  <h2>Item Detail</h2>\n                </ion-row>\n\n                <ion-row>\n\n                  <ion-col col-2>\n                    Name\n                  </ion-col>\n                  <ion-col col-4>\n                    {{selectedProduct.name}}\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col col-2>\n                    Qty\n                  </ion-col>\n                  <ion-col col-4>\n                    <input type="text" [(ngModel)]="selectedProduct.qty" />\n                  </ion-col>\n                </ion-row>\n                <ion-row>\n                  <ion-col col-2>\n                    Price\n                  </ion-col>\n                  <ion-col col-4>\n                    <input type="text" [(ngModel)]="selectedProduct.price" />\n                  </ion-col>\n                </ion-row>\n              </ion-grid> \n            </ion-col> -->\n          </ion-row>\n          <!-- <ion-row>\n            <ion-col>\n              <button ion-button full (click)="additem()">Add</button>\n            </ion-col>\n            <ion-col>\n             \n            </ion-col>\n          </ion-row> -->\n        </ion-grid>\n      </ion-col>\n      <ion-col>\n        <ion-grid>\n          <ion-row>\n            <h1>Bill</h1>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              <ion-list>\n                <ion-item>\n                  <ion-row>\n                    <ion-col col-4>Name</ion-col>\n                    <ion-col>Qty</ion-col>\n                    <ion-col>Price</ion-col>\n                  </ion-row>\n                </ion-item>\n                <ion-item *ngFor="let item of addeditems">\n                  <ion-row>\n                    <ion-col col-4>{{item.Name}}</ion-col>\n                    <ion-col><ion-icon name="arrow-back"></ion-icon> <span>{{item.qty}} </span> <ion-icon name="arrow-forward"></ion-icon></ion-col>\n                    <ion-col>{{item.Price}} RS</ion-col>\n                  </ion-row>\n\n                </ion-item>\n\n              </ion-list>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col></ion-col>\n            <ion-col >\n                <button  ion-button full (click)="removeitems()">Clear</button>\n               \n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Net Qty\n            </ion-col>\n            <ion-col>\n              {{netQty}}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Net Total\n            </ion-col>\n            <ion-col>\n              {{totaln  }}\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n              Discount\n            </ion-col>\n            <ion-col>\n              15%\n            </ion-col>\n          </ion-row>\n          <hr>\n          <ion-row>\n            <ion-col>\n              <h2> Grand Total</h2>\n            </ion-col>\n            <ion-col>\n              <h2>{{grandAmount + total }}  Rs</h2>\n            </ion-col>\n          </ion-row>\n          <ion-row>\n            <ion-col>\n                <button  ion-button full (click)="discount()">Discount</button>                \n            </ion-col>\n            <ion-col>\n              <button  ion-button full (click)="SaveOrder()">Save</button>\n            </ion-col>\n            <ion-col>\n                <button  ion-button full (click)="Save()">Cancel</button>\n              </ion-col>\n          </ion-row>\n        </ion-grid>\n      </ion-col>\n    </ion-row>\n  </ion-grid>\n\n\n\n\n</ion-content>'/*ion-inline-end:"/Users/studiosalaru/Documents/StudioApp/git/SIMPLEPOS/src/pages/home/home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */],
             __WEBPACK_IMPORTED_MODULE_2__angular_http__["b" /* Http */],
@@ -1716,5 +1811,5 @@ var HomePage = /** @class */ (function () {
 
 /***/ })
 
-},[207]);
+},[209]);
 //# sourceMappingURL=main.js.map

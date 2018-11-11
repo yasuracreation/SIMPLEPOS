@@ -31,4 +31,17 @@ width: 16vw !important;
       background-color: #0095ff;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
   }
+  .leftPanel{
+    background-color:rgb(212, 212, 212); min-height: 100vh
+  }
+  tr{
+      line-height: 1.6;
+
+
+  }
+  th{
+    background-color: #829aaf;
+    color: #ececec;
+  }
+  td{padding: 12 px}
 }
