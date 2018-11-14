@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { TransactionProvideProvider } from '../../providers/transaction-provide/transaction-provide';
 import { THROW_IF_NOT_FOUND } from '@angular/core/src/di/injector';
 
@@ -23,7 +23,8 @@ export class OrderPanelPage {
   SelectedSubCategory
   FilterSubCategory
   FilterProductItems
-  constructor(public navCtrl: NavController, public navParams: NavParams,public transactionProvide:TransactionProvideProvider) {
+  AddedProductItems = [];
+  constructor(public navCtrl: NavController, public navParams: NavParams,public transactionProvide:TransactionProvideProvider,private alertCtrl:AlertController) {
   }
   
   ionViewDidLoad() {
@@ -51,9 +52,66 @@ export class OrderPanelPage {
     });
     console.log(this.FilterProductItems)
   }
-  selectProduct(subCat){
-   
+  selectProduct(product){
+    product.Qty = 1;
+   console.log(product)
+   this.AddedProductItems.push(product);
+   console.log(this.AddedProductItems);
+   this.calculatePrice(this.AddedProductItems);
+  
   }
+  calculatePrice (addeditems){
+    this.Ordersummery = {Grandtotal:0,NetPrice:0,NoOfItem:0,Discount:0};
+    addeditems.forEach(items=>{
+      this.Ordersummery.NetPrice += items.Price;
+      
+    })
+    this.calculateGrandTotal();
+  }
+  AddQty(item) {
+    let qty = item.Qty;
+    let alert = this.alertCtrl.create({
+      title: 'Item Quantity',
+      inputs: [
+        {
+          name: 'Qty',
+          placeholder: 'Qty',
+          type:'number',
+           value:qty
+          
+        
+        }
+      ],
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: data => {
+            console.log('Cancel clicked');
+
+          }
+        },
+        {
+          text: 'Add',
+          handler: data => {
+            item.Qty
+           let index =  this.AddedProductItems.indexOf(item);
+           this.AddedProductItems[index].Qty = data.Qty;
+           this.AddedProductItems[index].Price = data.Qty * item.Price; 
+           this.calculatePrice(this.AddedProductItems);
+
+          }
+        }
+      ]
+    });
+    alert.present();
+  }
+  calculateGrandTotal(){
+    let netTotal = 0 , serviceCharge = 0, discount = 0 , premotions = 0 , advans = 0;
+    netTotal = this.Ordersummery.NetPrice;
+    this.Ordersummery.Grandtotal = this.Ordersummery.NetPrice + serviceCharge; 
+    }
+
   loadResources(){
     this.transactionProvide.LoadResources((result)=>{
       console.log(result);
@@ -68,5 +126,14 @@ export class OrderPanelPage {
     // })
 
     ///product /productCategory/ProductSubCategory
+  }
+  // Save order 
+  SaveOrder(){
+    //grandtotal//netprice//discount//numberofitem//customerid//customername//createddate//updateddate//servicecharge//discounts//
+    let OrderHeader = {grandtotal:0,netprice:0};
+    
+    //itemids//itemnames//itemprices//itemqty//linediscounts//servicecharge//
+    let OrderDetails = [];
+
   }
 }

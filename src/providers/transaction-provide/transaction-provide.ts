@@ -182,6 +182,40 @@ export class TransactionProvideProvider {
         console.log(error);
       });
   }
+  SaveOrder(addeditems,callback){
+     
+    var headers = new Headers();
+    headers.append("Accept", 'application/json');
+    headers.append('Content-Type', 'application/json');
+    const requestOptions = new RequestOptions({ headers: headers });
 
+    let orderData = {Header:[],Detail:[]};
+    orderData.Header ;
+    orderData.Detail;
+
+    
+    let postData = {
+      "Header": orderData.Header,
+      "orderDetails": orderData.Detail       
+
+    }
+    this.http.post("http://localhost:4000/api/order", postData, requestOptions)
+    .subscribe(data => {
+      if (data['_body']) {
+        let result = JSON.parse(data['_body']);
+        console.log(result)
+        if (result.IsSucess) {
+            callback(result)
+
+        } else {
+          callback(result); 
+        }
+      }
+      console.log(data['_body']);
+    }, error => {
+      console.log(error);
+    });
+
+}
 
 }
