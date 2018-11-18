@@ -14,23 +14,35 @@
 
 
 <ion-content padding>
- 
+
   <ion-grid>
     <ion-row>
+
       <ion-col col-4 class="leftPanel">
         <ion-grid>
           <ion-row>
-              <ion-grid>
-                  <ion-row>
-                   <ion-col>
-                           <ion-item>
-                              <ion-label color="primary" floating>Item Code</ion-label>
-                              <ion-input type="text"></ion-input>
-                           </ion-item> 
-                        <button ion-button small>Add</button>
-                    </ion-col>
-                  </ion-row>
-                </ion-grid>
+            <ion-col>
+              <button [disabled]="leftPanelIsNew == 1" (click)="leftPanelTggle(1)" ion-button full>New Order</button>
+            </ion-col>
+            <ion-col>
+              <button [disabled]="leftPanelIsNew == 2" (click)="leftPanelTggle(2)" ion-button full>Saved Order</button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
+        <ion-grid *ngIf="leftPanelIsNew == 1">
+          <ion-row>
+            <ion-grid>
+              <ion-row>
+                <ion-col>
+                  <ion-item>
+                    <ion-label color="primary" floating>Item Code</ion-label>
+                    <ion-input type="text"></ion-input>
+                  </ion-item>
+                  <button ion-button small>Add</button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
           </ion-row>
           <ion-row>
             <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">
@@ -39,11 +51,17 @@
                   <th>Item</th>
                   <th>Qty</th>
                   <th style="text-align: right">Price</th>
+                  <th style="text-align: right">
+                    <ion-icon name="trash"></ion-icon>
+                  </th>
                 </tr>
                 <tr *ngFor="let product of AddedProductItems">
                   <td style="text-align: center">{{product.Name}}</td>
                   <td (click)="AddQty(product)" style="text-align: center">{{product.Qty}}</td>
                   <td style="text-align: right">{{product.Price}}Rs</td>
+                  <td style="text-align: right" (click)="delete(product)">
+                    <ion-icon name="trash"></ion-icon>
+                  </td>
                 </tr>
               </table>
             </ion-col>
@@ -72,16 +90,100 @@
                     Grand Total
                   </ion-col>
                   <ion-col>
-                    450
+                    {{Ordersummery.Grandtotal}}
                   </ion-col>
                 </ion-row>
               </ion-grid>
-                <button ion-button full>Save</button>
+              <button (click)="SaveOrder()" ion-button full>Save</button>
             </ion-col>
           </ion-row>
         </ion-grid>
+        <ion-grid *ngIf="leftPanelIsNew == 2">
+            <ion-row>
+                <ion-grid>
+                  <ion-row>
+                    <ion-col>
+                      <ion-item>
+                        <ion-label color="primary" floating>Item Code</ion-label>
+                        <ion-input type="text"></ion-input>
+                      </ion-item>
+                      <button ion-button small>Add</button>
+                    </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-row>
+              <ion-row>
+                <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">
+                  <table width="100%">
+                    <tr>
+                      <th>Item</th>
+                      <th>Qty</th>
+                      <th style="text-align: right">Price</th>
+                      <th style="text-align: right">
+                        <ion-icon name="trash"></ion-icon>
+                      </th>
+                    </tr>
+                    <tr *ngFor="let product of AddedProductItems">
+                      <td style="text-align: center">{{product.Name}}</td>
+                      <td (click)="AddQty(product)" style="text-align: center">{{product.Qty}}</td>
+                      <td style="text-align: right">{{product.Price}}Rs</td>
+                      <td style="text-align: right" (click)="delete(product)">
+                        <ion-icon name="trash"></ion-icon>
+                      </td>
+                    </tr>
+                  </table>
+                </ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col>
+                  <ion-grid>
+                    <ion-row>
+                      <ion-col>
+                        no Of Items
+                      </ion-col>
+                      <ion-col>
+                        {{AddedProductItems.length}}
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        Net Total
+                      </ion-col>
+                      <ion-col>
+                        {{Ordersummery.NetPrice}}
+                      </ion-col>
+                    </ion-row>
+                    <ion-row>
+                        <ion-col>
+                          Discount
+                        </ion-col>
+                        <ion-col>
+                          {{Ordersummery.NetPrice}}
+                        </ion-col>
+                      </ion-row>
+                      <ion-row>
+                          <ion-col>
+                            Advance
+                          </ion-col>
+                          <ion-col>
+                            {{Ordersummery.Advance}}
+                          </ion-col>
+                        </ion-row>
+                    <ion-row>
+                      <ion-col>
+                        Grand Total
+                      </ion-col>
+                      <ion-col>
+                        {{Ordersummery.Grandtotal}}
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  <button (click)="payment()" ion-button full>Pay</button>
+                </ion-col>
+              </ion-row>
+        </ion-grid>
       </ion-col>
-      <ion-col >
+      <ion-col>
         <ion-grid>
           <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">
             <ion-scroll scrollX="true" style="width:100vw;height:75px">
@@ -98,26 +200,25 @@
             <ion-grid>
               <ion-row>
                 <ion-col col-3 style="background-color: darkgray; min-height: 100vh">
-                  
-                    <ion-grid >
-                      <ion-row *ngFor="let item of FilterSubCategory">
-                        <ion-col style="align-items: flex-end " (click)="selectSubCategory(item)" class="square-container">
-                        
-                         <ion-item>
-                          {{item.Name}}
-                         </ion-item> 
-                        
-                        </ion-col>
-                      </ion-row>
 
-                    </ion-grid>
-                
+                  <ion-grid>
+                    <ion-row *ngFor="let item of FilterSubCategory">
+                      <ion-col style="align-items: flex-end " (click)="selectSubCategory(item)" class="square-container">
+
+                        <ion-item>
+                          {{item.Name}}
+                        </ion-item>
+
+                      </ion-col>
+                    </ion-row>
+
+                  </ion-grid>
+
                 </ion-col>
                 <ion-col>
                   <!-- <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of FilterProductItems"  class="orderpanelItem">{{item.Name}}</ion-col> -->
                   <div class="square-container">
-                    <div (click)="selectProduct(item)" *ngFor="let item of FilterProductItems" class="orderpanelItem"
-                      class="square">
+                    <div (click)="selectProduct(item)" *ngFor="let item of FilterProductItems" class="orderpanelItem" class="square">
                       <div class="content">{{item.Name}}</div>
                     </div>
                   </div>

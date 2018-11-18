@@ -18,6 +18,7 @@ import { TransactionProvideProvider } from '../providers/transaction-provide/tra
 import { SubCategoryAddPage } from '../pages/sub-category-add/sub-category-add';
 import { FilterPipe } from '../pipes/filter/filter';
 import { BillCalculationProvider } from '../providers/bill-calculation/bill-calculation';
+import { Printer } from '@ionic-native/printer'
 @NgModule({
   declarations: [
     MyApp,
@@ -54,7 +55,9 @@ import { BillCalculationProvider } from '../providers/bill-calculation/bill-calc
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     TransactionProvideProvider,
-    BillCalculationProvider
+    BillCalculationProvider,
+    Printer
+    
   ]
 })
 export class AppModule {}
