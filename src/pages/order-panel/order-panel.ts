@@ -130,10 +130,18 @@ export class OrderPanelPage {
   // Save order 
   SaveOrder(){
     //grandtotal//netprice//discount//numberofitem//customerid//customername//createddate//updateddate//servicecharge//discounts//
-    let OrderHeader = {grandtotal:0,netprice:0};
+    let OrderHeader = {grandtotal:0,netprice:0,discount:0,numberofitem:0,customerid:0,customername:'',serviceCharge:0};
+    OrderHeader.grandtotal = this.Ordersummery.Grandtotal;
+    OrderHeader.netprice = this.Ordersummery.NetPrice;
+    
     
     //itemids//itemnames//itemprices//itemqty//linediscounts//servicecharge//
     let OrderDetails = [];
-
+    this.AddedProductItems.forEach(items=>{
+      OrderDetails.push(items);
+    })
+    this.transactionProvide.SaveOrder(OrderHeader,OrderDetails,(result)=>{
+      
+    })
   }
 }

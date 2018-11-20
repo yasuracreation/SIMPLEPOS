@@ -409,9 +409,16 @@ var OrderPanelPage = /** @class */ (function () {
     // Save order 
     OrderPanelPage.prototype.SaveOrder = function () {
         //grandtotal//netprice//discount//numberofitem//customerid//customername//createddate//updateddate//servicecharge//discounts//
-        var OrderHeader = { grandtotal: 0, netprice: 0 };
+        var OrderHeader = { grandtotal: 0, netprice: 0, discount: 0, numberofitem: 0, customerid: 0, customername: '', serviceCharge: 0 };
+        OrderHeader.grandtotal = this.Ordersummery.Grandtotal;
+        OrderHeader.netprice = this.Ordersummery.NetPrice;
         //itemids//itemnames//itemprices//itemqty//linediscounts//servicecharge//
         var OrderDetails = [];
+        this.AddedProductItems.forEach(function (items) {
+            OrderDetails.push(items);
+        });
+        this.transactionProvide.SaveOrder(OrderHeader, OrderDetails, function (result) {
+        });
     };
     OrderPanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
@@ -449,11 +456,11 @@ webpackEmptyAsyncContext.id = 118;
 
 var map = {
 	"../pages/admin/admin.module": [
-		289,
+		290,
 		5
 	],
 	"../pages/category/category.module": [
-		290,
+		289,
 		1
 	],
 	"../pages/login/login.module": [
@@ -955,7 +962,7 @@ var ListPage = /** @class */ (function () {
     };
     ListPage = ListPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-list',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>List</ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content>\n  <ion-list>\n    <button ion-item *ngFor="let item of items" (click)="itemTapped($event, item)">\n      <ion-icon [name]="item.icon" item-start></ion-icon>\n      {{item.title}}\n      <div class="item-note" item-end>\n        {{item.note}}\n      </div>\n    </button>\n  </ion-list>\n  <div *ngIf="selectedItem" padding>\n    You navigated here from <b>{{selectedItem.title}}</b>\n  </div>\n</ion-content>\n'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/
+            selector: 'page-list',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/'<div class="container">\n  <div class="row">\n    <div class="span4">\n            <img src="//placehold.it/170x40" class="img-rounded logo">\n      <address>\n          <strong>ACME, Inc.</strong><br>\n          P.O Box 3171<br>\n          Kent, WA 98089<br>\n      </address>\n    </div>\n    <div class="span4 well">\n      <table class="invoice-head">\n        <tbody>\n          <tr>\n            <td class="pull-right"><strong>Customer #</strong></td>\n            <td>21398324797234</td>\n          </tr>\n          <tr>\n            <td class="pull-right"><strong>Invoice #</strong></td>\n            <td>2340</td>\n          </tr>\n          <tr>\n            <td class="pull-right"><strong>Date</strong></td>\n            <td>10-08-2013</td>\n          </tr>\n          <tr>\n            <td class="pull-right"><strong>Period</strong></td>\n                      <td>9/1/2103 - 9/30/2013</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n  <div class="row">\n    <div class="span8">\n      <h2>Invoice</h2>\n    </div>\n  </div>\n  <div class="row">\n    <div class="span8 well invoice-body">\n      <table class="table table-bordered">\n      <thead>\n        <tr>\n          <th>Description</th>\n          <th>Date</th>\n          <th>Amount</th>\n        </tr>\n      </thead>\n      <tbody>\n      <tr>\n        <td>Service request</td>\n        <td>10/8/2013</td>\n        <td>$1000.00</td>\n        </tr><tr>\n          <td>&nbsp;</td>\n          <td><strong>Total</strong></td>\n          <td><strong>$1000.00</strong></td>\n        </tr>\n      </tbody>\n    </table>\n    </div>\n  </div>\n  <div class="row">\n    <div class="span8 well invoice-thank">\n      <h5 style="text-align:center;">Thank You!</h5>\n    </div>\n  </div>\n  <div class="row">\n      <div class="span3">\n          <strong>Phone:</strong> <a href="tel:555-555-5555">555-555-5555</a>\n      </div>\n      <div class="span3">\n          <strong>Email:</strong> <a href="mailto:hello@5marks.co">hello@bootply.com</a>\n      </div>\n      <div class="span3">\n          <strong>Website:</strong> <a href="http://5marks.co">http://bootply.com</a>\n      </div>\n  </div>\n</div>'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/SIMPLEPOS/src/pages/list/list.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], ListPage);
@@ -1163,8 +1170,8 @@ var AppModule = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_6__angular_http__["c" /* HttpModule */],
                 __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["d" /* IonicModule */].forRoot(__WEBPACK_IMPORTED_MODULE_3__app_component__["a" /* MyApp */], {}, {
                     links: [
-                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/category/category.module#CategoryPageModule', name: 'CategoryPage', segment: 'category', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/order-panel/order-panel.module#OrderPanelPageModule', name: 'OrderPanelPage', segment: 'order-panel', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/payment-panel/payment-panel.module#PaymentPanelPageModule', name: 'PaymentPanelPage', segment: 'payment-panel', priority: 'low', defaultHistory: [] },
@@ -1576,7 +1583,7 @@ var TransactionProvideProvider = /** @class */ (function () {
             console.log(error);
         });
     };
-    TransactionProvideProvider.prototype.SaveOrder = function (addeditems, callback) {
+    TransactionProvideProvider.prototype.SaveOrder = function (orderheader, orderdetails, callback) {
         var headers = new __WEBPACK_IMPORTED_MODULE_0__angular_http__["a" /* Headers */]();
         headers.append("Accept", 'application/json');
         headers.append('Content-Type', 'application/json');
@@ -1607,10 +1614,9 @@ var TransactionProvideProvider = /** @class */ (function () {
     };
     TransactionProvideProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]])
     ], TransactionProvideProvider);
     return TransactionProvideProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=transaction-provide.js.map

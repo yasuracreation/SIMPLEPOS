@@ -182,7 +182,7 @@ export class TransactionProvideProvider {
         console.log(error);
       });
   }
-  SaveOrder(addeditems,callback){
+  SaveOrder(orderheader,orderdetails,callback){
      
     var headers = new Headers();
     headers.append("Accept", 'application/json');
