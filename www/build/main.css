@@ -25674,6 +25674,27 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+page-home ion-segment {
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  overflow: auto;
+}
+
+page-home ion-segment::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+page-home ion-segment ion-segment-button.segment-button {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1 0 100px;
+  -ms-flex: 1 0 100px;
+  flex: 1 0 100px;
+}
+
 page-login .home-container {
   display: -webkit-flex;
   -webkit-flex-direction: column;
@@ -25692,4 +25713,52 @@ page-login .header {
 
 page-login .icon-row {
   -webkit-align-items: center;
+}
+
+page-order-panel .orderpanelItem {
+  background-color: brown;
+  height: 7vh;
+  margin: 5px;
+  width: 16vw !important;
+}
+
+page-order-panel .square-container {
+  padding: 8px;
+}
+
+page-order-panel .square {
+  width: calc(100% /5);
+  float: left;
+  position: relative;
+  padding-bottom: calc(100% / 5);
+}
+
+page-order-panel .square .content {
+  width: calc(100% - 12px);
+  height: calc(100% - 16px);
+  margin: 8px;
+  padding: 16px;
+  position: absolute;
+  color: white;
+  background-color: #0095ff;
+  -webkit-box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+}
+
+page-order-panel .leftPanel {
+  background-color: #d4d4d4;
+  min-height: 100vh;
+}
+
+page-order-panel tr {
+  line-height: 1.6;
+}
+
+page-order-panel th {
+  background-color: #829aaf;
+  color: #ececec;
+}
+
+page-order-panel td {
+  padding: 12 px;
 }

@@ -27,7 +27,7 @@ export class CategoryPage {
     console.log('ionViewDidLoad CategoryPage');
   }
   loadallproduct() {
-    this.http.get('http://localhost:4000/api/category').subscribe(result => {
+    this.http.get('http://localhost:4000/api/productCategory').subscribe(result => {
       console.log(result);
       this.products = JSON.parse(result['_body']);
     })
@@ -35,8 +35,8 @@ export class CategoryPage {
   newCategory() {
     this.productDTO = { Category: '', IndexId: '' ,Id:''};
   }
-  createProduct() {
-
+  createCategory() {
+      console.log("CreateProduct")
     var headers = new Headers();
     headers.append("Accept", 'application/json');
     headers.append('Content-Type', 'application/json');
@@ -50,7 +50,7 @@ export class CategoryPage {
     }
 
     if (this.productDTO.Id != "") {
-      this.http.put("http://localhost:4000/api/category/" + this.productDTO.Id, postData, requestOptions)
+      this.http.put("http://localhost:4000/api/productCategory/" + this.productDTO.Id, postData, requestOptions)
         .subscribe(data => {
           if (data['_body']) {
             let result = JSON.parse(data['_body']);
@@ -66,7 +66,7 @@ export class CategoryPage {
           console.log(error);
         });
     } else {
-      this.http.post("http://localhost:4000/api/category", postData, requestOptions)
+      this.http.post("http://localhost:4000/api/productCategory", postData, requestOptions)
         .subscribe(data => {
           if (data['_body']) {
             let result = JSON.parse(data['_body']);

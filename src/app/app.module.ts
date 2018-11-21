@@ -13,6 +13,12 @@ import { ProductAddPage } from '../pages/product-add/product-add';
 import { ProductCategoryAddPage } from '../pages/product-category-add/product-category-add'
 import { LoginPage } from '../pages/login/login';
 import { IonicStorageModule } from '@ionic/storage';
+import { OrderPanelPage } from '../pages/order-panel/order-panel';
+import { TransactionProvideProvider } from '../providers/transaction-provide/transaction-provide';
+import { SubCategoryAddPage } from '../pages/sub-category-add/sub-category-add';
+import { FilterPipe } from '../pipes/filter/filter';
+import { BillCalculationProvider } from '../providers/bill-calculation/bill-calculation';
+import { Printer } from '@ionic-native/printer'
 @NgModule({
   declarations: [
     MyApp,
@@ -21,7 +27,10 @@ import { IonicStorageModule } from '@ionic/storage';
     AdminPage,
     ProductAddPage,
     LoginPage,
-    ProductCategoryAddPage
+    ProductCategoryAddPage,
+    OrderPanelPage,
+    SubCategoryAddPage,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -37,12 +46,18 @@ import { IonicStorageModule } from '@ionic/storage';
     AdminPage,
     ProductAddPage,
     LoginPage,
-    ProductCategoryAddPage
+    ProductCategoryAddPage,
+    OrderPanelPage,
+    SubCategoryAddPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    TransactionProvideProvider,
+    BillCalculationProvider,
+    Printer
+    
   ]
 })
 export class AppModule {}

@@ -29,10 +29,10 @@
               </ion-item>
               <ion-item>
                 <ion-label>Product Category</ion-label>
-                <ion-select [(ngModel)]="productDTO.Category">
-                    <ion-option value="1">Photo</ion-option>
-                    <ion-option value="2">Frame</ion-option>
-                    <ion-option value="3">Mug</ion-option>
+                <ion-select [(ngModel)]="productDTO.Category" (ionChange)="selectProductCategory(productDTO.Category)">
+                    <ion-option *ngFor="let item of ProductCategory" [value]="item._id">{{item.Name}}</ion-option>
+                    <!-- <ion-option value="2">Frame</ion-option>
+                    <ion-option value="3">Mug</ion-option> -->
                     
                   </ion-select>
                 
@@ -40,8 +40,8 @@
               <ion-item>
                   <ion-label>SubCategory</ion-label>
                   <ion-select [(ngModel)]="productDTO.SubCategory">
-                      <ion-option value="1">Mate</ion-option>
-                      <ion-option value="2">Gloss </ion-option>
+                    <ion-option *ngFor="let item of productSubCategory" [value]="item._id">{{item.Name}}</ion-option>
+                    
                     </ion-select>
                   
               </ion-item>

@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { analyzeAndValidateNgModules } from '@angular/compiler';
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
@@ -109,7 +110,10 @@ export class HomePage {
   products;
   productCategory;
   productSubCategory;
-  constructor(public navCtrl: NavController,private http: Http) {
+  constructor(public navCtrl: NavController,
+    private http: Http,
+    private alertCtrl: AlertController)
+   {
     this.loaditems();
     this.selectCategory(1)
   }
@@ -168,5 +172,59 @@ export class HomePage {
   }
   SaveOrder(){
       console.log(this.addeditems);
+      
+      var headers = new Headers();
+      headers.append("Accept", 'application/json');
+      headers.append('Content-Type', 'application/json');
+      const requestOptions = new RequestOptions({ headers: headers });
+
+      let orderData = {Header:[],Detail:[]};
+      orderData.Header ;
+      orderData.Detail;
+
+      
+      let postData = {
+        "Header": orderData.Header,
+        "orderDetails": orderData.Detail       
+  
+      }
+      this.http.post("http://localhost:4000/api/order", postData, requestOptions)
+      .subscribe(data => {
+        if (data['_body']) {
+          let result = JSON.parse(data['_body']);
+          console.log(result)
+          if (result.IsSucess) {
+            this.presentConfirm(result.Message);
+          } else {
+            this.presentConfirm("Order Save Fail")
+          }
+        }
+        console.log(data['_body']);
+      }, error => {
+        console.log(error);
+      });
+
+  }
+  presentConfirm(message) {
+    let alert = this.alertCtrl.create({
+      title: 'Product ',
+      message: message,
+      buttons: [
+        {
+          text: 'Cancel',
+          role: 'cancel',
+          handler: () => {
+            console.log('Cancel clicked');
+          }
+        },
+        {
+          text: 'Got It',
+          handler: () => {
+            console.log('Buy clicked');
+          }
+        }
+      ]
+    });
+    alert.present();
   }
 }

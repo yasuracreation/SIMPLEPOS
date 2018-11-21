@@ -1,0 +1,47 @@
+page-order-panel {
+.orderpanelItem{
+    background-color: brown;
+
+height: 7vh;
+
+// padding: 22px;
+
+margin: 5px;
+
+width: 16vw !important;
+}
+.square-container {
+    padding: 8px;
+  }
+  
+  .square {
+    width: calc(100% /5);
+    float: left;
+    position: relative;
+    padding-bottom: calc(100% / 5);
+  }
+  
+  .square .content {
+      width: calc(100% - 12px);
+      height: calc(100% - 16px);
+      margin: 8px;
+      padding: 16px;
+      position: absolute;
+      color: white;
+      background-color: #0095ff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.26);
+  }
+  .leftPanel{
+    background-color:rgb(212, 212, 212); min-height: 100vh
+  }
+  tr{
+      line-height: 1.6;
+
+
+  }
+  th{
+    background-color: #829aaf;
+    color: #ececec;
+  }
+  td{padding: 12 px}
+}

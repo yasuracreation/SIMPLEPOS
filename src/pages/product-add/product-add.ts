@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
+import { NavController, NavParams, AlertController } from 'ionic-angular';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+import { TransactionProvideProvider } from '../../providers/transaction-provide/transaction-provide';
 
 /**
  * Generated class for the ProductAddPage page.
@@ -10,22 +11,27 @@ import 'rxjs/add/operator/map';
  * Ionic pages and navigation.
  */
 
-@IonicPage()
+
 @Component({
   selector: 'page-product-add',
   templateUrl: 'product-add.html',
 })
 export class ProductAddPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: Http, private alertCtrl: AlertController) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, 
+    private http: Http, private alertCtrl: AlertController,private transactionHandeler:TransactionProvideProvider) {
   }
   searchQuery: string = '';
 
   products;
   productfilter;
+  ProductCategory;
+  productSubCategory;
+  Resources ={ProductItems:[],ProductCategory:[],ProductSubCategory:[]};
   productDTO = { Name: '', Category: '', SubCategory: '', Price: '', Size: '', Id: '' };
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductAddPage');
+    this.loadResources();
     this.loadallproduct();
   }
   getItems(ev: any) {
@@ -52,6 +58,24 @@ export class ProductAddPage {
     this.productDTO.SubCategory = item.SubCategory;
     this.productDTO.Price = item.Price;
     this.productDTO.Size = item.size;
+  }
+  loadResources(){
+    this. transactionHandeler.LoadResources((result)=>{
+      console.log(result);
+      this.Resources.ProductCategory = result.productCategory.data;
+      this.Resources.ProductSubCategory = result.productSubcategory.data;
+      this.Resources.ProductItems = result.productItems.data;
+      this.ProductCategory = result.productCategory.data;
+      
+      // this.selectCategory(this.Resources.ProductCategory[0])
+    });
+  }
+  selectProductCategory(category){
+    this.productSubCategory = this.Resources.ProductSubCategory.filter(elem=>{
+      return elem.CategoryId == category;
+    });
+    console.log(this.productSubCategory);
+    console.log(this.Resources.ProductSubCategory);
   }
   createProduct() {
 
