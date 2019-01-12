@@ -1,6 +1,6 @@
 webpackJsonp([0],{
 
-/***/ 294:
+/***/ 293:
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -72,7 +72,7 @@ var PaymentPanelPage = /** @class */ (function () {
     };
     PaymentPanelPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
-            selector: 'page-payment-panel',template:/*ion-inline-start:"/home/yasura/Desktop/GithubApp/new/SIMPLEPOS/src/pages/payment-panel/payment-panel.html"*/'<!--\n  Generated template for the PaymentPanelPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>paymentPanel</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n\n</ion-content>\n'/*ion-inline-end:"/home/yasura/Desktop/GithubApp/new/SIMPLEPOS/src/pages/payment-panel/payment-panel.html"*/,
+            selector: 'page-payment-panel',template:/*ion-inline-start:"D:\app\StrudioApp\SIMPLEPOS\src\pages\payment-panel\payment-panel.html"*/'<!--\n\n  Generated template for the PaymentPanelPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>paymentPanel</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n</ion-content>\n\n'/*ion-inline-end:"D:\app\StrudioApp\SIMPLEPOS\src\pages\payment-panel\payment-panel.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]])
     ], PaymentPanelPage);
