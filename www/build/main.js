@@ -521,10 +521,9 @@ var OrderPanelPage = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'page-order-panel',template:/*ion-inline-start:"D:\app\StrudioApp\SIMPLEPOS\src\pages\order-panel\order-panel.html"*/'<!--\n\n  Generated template for the OrderPanelPage page.\n\n\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title>orderPanel</ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n<ion-content padding>\n\n\n\n  <ion-grid>\n\n    <ion-row>\n\n\n\n      <ion-col col-4 class="leftPanel">\n\n        <ion-grid>\n\n          <ion-row>\n\n            <ion-col>\n\n              <button [disabled]="leftPanelIsNew == 1" (click)="leftPanelTggle(1)" ion-button full>New Order</button>\n\n            </ion-col>\n\n            <ion-col>\n\n              <button [disabled]="leftPanelIsNew == 2" (click)="leftPanelTggle(2)" ion-button full>Saved Order</button>\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n\n\n        <ion-grid *ngIf="leftPanelIsNew == 1">\n\n          <ion-row>\n\n            <ion-grid>\n\n              <ion-row>\n\n                <ion-col>\n\n                  <ion-item>\n\n                    <ion-label color="primary" floating>Item Code</ion-label>\n\n                    <ion-input type="text"></ion-input>\n\n                  </ion-item>\n\n                  <button ion-button small>Add</button>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col style="min-height: 48vh;overflow: auto; max-height: 48vh">\n\n              <table width="100%">\n\n                <tr>\n\n                  <th>Item</th>\n\n                  <th>Qty</th>\n\n                  <th style="text-align: right">Price</th>\n\n                  <th style="text-align: right">\n\n                    <ion-icon name="trash"></ion-icon>\n\n                  </th>\n\n                </tr>\n\n                <tr *ngFor="let product of AddedProductItems">\n\n                  <td style="text-align: center">{{product.Name}}</td>\n\n                  <td (click)="AddQty(product)" style="text-align: center">{{product.Qty}}</td>\n\n                  <td style="text-align: right">{{product.Price}}Rs</td>\n\n                  <td style="text-align: right" (click)="delete(product)">\n\n                    <ion-icon name="trash"></ion-icon>\n\n                  </td>\n\n                </tr>\n\n              </table>\n\n            </ion-col>\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-col>\n\n              <ion-grid>\n\n                <ion-row>\n\n                  <ion-col>\n\n                    no Of Items\n\n                  </ion-col>\n\n                  <ion-col>\n\n                    {{AddedProductItems.length}}\n\n                  </ion-col>\n\n                </ion-row>\n\n                <ion-row>\n\n                  <ion-col>\n\n                    Net Total\n\n                  </ion-col>\n\n                  <ion-col>\n\n                    {{Ordersummery.NetPrice}}\n\n                  </ion-col>\n\n                </ion-row>\n\n                <ion-row>\n\n                  <ion-col>\n\n                    Grand Total\n\n                  </ion-col>\n\n                  <ion-col>\n\n                    {{Ordersummery.Grandtotal}}\n\n                  </ion-col>\n\n                </ion-row>\n\n              </ion-grid>\n\n              <button (click)="SaveOrder()" ion-button full>Save</button>\n\n              <button (click)="payment()" ion-button full>Pay</button>\n\n            </ion-col>\n\n          </ion-row>\n\n        </ion-grid>\n\n        <ion-grid *ngIf="leftPanelIsNew == 2">\n\n           <ion-row>\n\n             <ion-col>\n\n              <ion-list>\n\n                <ion-item  *ngFor="let order of Orders">\n\n                  <ion-avatar item-start>\n\n                    <img src="img/avatar-finn.png">\n\n                  </ion-avatar>\n\n                  <h2>Bill number </h2>\n\n                  <h3>Customer ID</h3>\n\n                  <p>Customer Name</p>\n\n                </ion-item>\n\n              </ion-list>\n\n             </ion-col>\n\n           </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n\n      <ion-col>\n\n        <ion-grid>\n\n          <ion-row style="overflow-x: auto; width:50vw;display:inline-block;">\n\n            <ion-scroll scrollX="true" style="width:100vw;height:75px">\n\n              <ion-segment color="secondary">\n\n                <ion-segment-button (click)="selectCategory(item)" *ngFor="let item of Resources.ProductCategory">\n\n                  <ion-icon></ion-icon>\n\n                  {{item.Name}}\n\n                </ion-segment-button>\n\n              </ion-segment>\n\n            </ion-scroll>\n\n\n\n          </ion-row>\n\n          <ion-row>\n\n            <ion-grid>\n\n              <ion-row>\n\n                <ion-col col-3 style="background-color: darkgray; min-height: 100vh">\n\n\n\n                  <ion-grid>\n\n                    <ion-row *ngFor="let item of FilterSubCategory">\n\n                      <ion-col style="align-items: flex-end " (click)="selectSubCategory(item)" class="square-container">\n\n\n\n                        <ion-item>\n\n                          {{item.Name}}\n\n                        </ion-item>\n\n\n\n                      </ion-col>\n\n                    </ion-row>\n\n\n\n                  </ion-grid>\n\n\n\n                </ion-col>\n\n                <ion-col>\n\n                  <!-- <ion-col col-2  (click)="selectProduct(item)" *ngFor="let item of FilterProductItems"  class="orderpanelItem">{{item.Name}}</ion-col> -->\n\n                  <div class="square-container">\n\n                    <div (click)="selectProduct(item)" *ngFor="let item of FilterProductItems" class="orderpanelItem" class="square">\n\n                      <div class="content">{{item.Name}}</div>\n\n                    </div>\n\n                  </div>\n\n                </ion-col>\n\n              </ion-row>\n\n            </ion-grid>\n\n\n\n\n\n          </ion-row>\n\n        </ion-grid>\n\n      </ion-col>\n\n    </ion-row>\n\n  </ion-grid>\n\n\n\n</ion-content>'/*ion-inline-end:"D:\app\StrudioApp\SIMPLEPOS\src\pages\order-panel\order-panel.html"*/,
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_printer__["a" /* Printer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_printer__["a" /* Printer */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_2__providers_transaction_provide_transaction_provide__["a" /* TransactionProvideProvider */], __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_3__ionic_native_printer__["a" /* Printer */]])
     ], OrderPanelPage);
     return OrderPanelPage;
-    var _a, _b, _c, _d, _e;
 }());
 
 //# sourceMappingURL=order-panel.js.map
@@ -561,19 +560,19 @@ var map = {
 		1
 	],
 	"../pages/login/login.module": [
-		292,
+		293,
 		4
 	],
 	"../pages/order-panel/order-panel.module": [
-		294,
+		295,
 		3
 	],
 	"../pages/payment-panel/payment-panel.module": [
-		293,
+		292,
 		0
 	],
 	"../pages/sub-category-add/sub-category-add.module": [
-		295,
+		294,
 		2
 	]
 };
@@ -1271,10 +1270,10 @@ var AppModule = /** @class */ (function () {
                     links: [
                         { loadChildren: '../pages/admin/admin.module#AdminPageModule', name: 'AdminPage', segment: 'admin', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/category/category.module#CategoryPageModule', name: 'CategoryPage', segment: 'category', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
                         { loadChildren: '../pages/payment-panel/payment-panel.module#PaymentPanelPageModule', name: 'PaymentPanelPage', segment: 'payment-panel', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/order-panel/order-panel.module#OrderPanelPageModule', name: 'OrderPanelPage', segment: 'order-panel', priority: 'low', defaultHistory: [] },
-                        { loadChildren: '../pages/sub-category-add/sub-category-add.module#SubCategoryAddPageModule', name: 'SubCategoryAddPage', segment: 'sub-category-add', priority: 'low', defaultHistory: [] }
+                        { loadChildren: '../pages/login/login.module#LoginPageModule', name: 'LoginPage', segment: 'login', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/sub-category-add/sub-category-add.module#SubCategoryAddPageModule', name: 'SubCategoryAddPage', segment: 'sub-category-add', priority: 'low', defaultHistory: [] },
+                        { loadChildren: '../pages/order-panel/order-panel.module#OrderPanelPageModule', name: 'OrderPanelPage', segment: 'order-panel', priority: 'low', defaultHistory: [] }
                     ]
                 }),
                 __WEBPACK_IMPORTED_MODULE_13__ionic_storage__["a" /* IonicStorageModule */].forRoot()
@@ -1705,10 +1704,9 @@ var TransactionProvideProvider = /** @class */ (function () {
     };
     TransactionProvideProvider = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["A" /* Injectable */])(),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["b" /* Http */]])
     ], TransactionProvideProvider);
     return TransactionProvideProvider;
-    var _a;
 }());
 
 //# sourceMappingURL=transaction-provide.js.map
