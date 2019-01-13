@@ -201,5 +201,13 @@ export class TransactionProvideProvider {
       return this.http.post("http://localhost:4000/api/order", postData, requestOptions)
       
   }
+  GetOrders(callback){     
+    
+    this.http.get('http://localhost:4000/api/order').subscribe(result => {
+      console.log(result);
+      callback(JSON.parse(result['_body']));
+
+    });
+  }
 
 }

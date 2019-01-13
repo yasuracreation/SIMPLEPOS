@@ -26,6 +26,7 @@ export class OrderPanelPage {
   FilterProductItems
   AddedProductItems = [];
   leftPanelIsNew = 1;
+  Orders;
   constructor(public navCtrl: NavController, public navParams: NavParams, public transactionProvide: TransactionProvideProvider, private alertCtrl: AlertController, private printer: Printer) {
   }
 
@@ -56,6 +57,7 @@ export class OrderPanelPage {
   }
   leftPanelTggle(statues) {
     this.leftPanelIsNew = statues;
+    this.LoadSavedOrders();
   }
   selectProduct(product) {
 
@@ -131,6 +133,16 @@ export class OrderPanelPage {
       ]
     });
     alert.present();
+  }
+  LoadSavedOrders(){
+    this.transactionProvide.GetOrders((Orders)=>{
+      if(Orders.IsSucess){
+        this.Orders = Orders.data.Header;
+      }else{
+        this.presentConfirm(Orders.Message);
+      }
+     
+    })
   }
 
   SaveOrder() {
